@@ -39,4 +39,20 @@ This paper prototype has 8 screens. The home screen is a interactive map where y
 
 
 
+Storyboard 1
+Persona: Sarah’s Mom 
+Profession: stay at home mom to take care of Sarah, her daughter 
+Age: 35
+Key personality traits: kind, loving 
 
+![](storyboard1.png)
+
+
+
+Storyboard 2
+Persona: Mary Doyle
+Profession: A nurse for the Rady’s Children Hospital in San Diego who volunteers for local animal shelters on occasion. 
+Age: 28
+Key personality traits: Patient, good with children and animals, kind, studious, eager to contribute, sociable. 
+
+![](storyboard2.png)
