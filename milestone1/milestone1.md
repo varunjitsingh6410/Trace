@@ -36,9 +36,7 @@ This paper prototype has 8 screens. The home screen is a interactive map where y
 
 ![](prototype2p1.png)
 ![](prototype2p2.png)
-![](prototype2p3.png)
-![](prototype2p4.png)
-![](prototype2p5.png)
+
 
 
 
