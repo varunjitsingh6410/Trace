@@ -18,6 +18,8 @@ APIs
 Waze: The Waze GPS application has a feature that allows people to notify other drivers of where cops are located. We plan to take this feature and modify it so that people can pin drop areas they might have seen the missing target. 
 NamUs: This is a repository of information of missing people across the United States. It has several critical features such as name, image, and last sighting that we can implement into our application.
 
+
+
 Paper Prototype #1 
 This paper prototype has five main screens: map, list, more information, saved, and settings. The map screen has your current location and all the missing people and pets. The list screen has all the nearby missing people and pets in a list format. Once you click on a people/pet it’ll take you to a screen where you can learn more information about the missing people/pet and share it to social media. You can use the search through the list as well as filter by people/pets, date, and distance. The saved screen is all the people/pets you have saved for quick access. The settings screen allows you to adjust when to receive push notifications alert as well as a brief description about the app.
 
@@ -26,6 +28,8 @@ This paper prototype has five main screens: map, list, more information, saved, 
 ![](prototype1p3.png)
 ![](prototype1p4.png)
 ![](prototype1p5.png)
+
+
 
 Paper Prototype #2
 This paper prototype has 8 screens. The home screen is a interactive map where you can filter between lost animals or lost humans (hence why some screens are duplicated). The add screen includes the ability to share where you can rapidly share a auto-generated lost post on social media.
