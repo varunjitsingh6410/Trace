@@ -9,6 +9,22 @@ app.listen(8000, () => {
   console.log('Example app listening on port 8000!')
 });
 
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+var firebase = require("firebase/app");
+
+// Add the Firebase products that you want to use
+require("firebase/auth");
+require("firebase/database");
+
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+import * as firebase from "firebase/app";
+
+// Add the Firebase services that you want to use
+import "firebase/auth";
+import "firebase/database";
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
@@ -19,3 +35,12 @@ app.listen(8000, () => {
     messagingSenderId: "241015211966"
   };
   firebase.initializeApp(config);
+
+// Initialize Firebase with a "default" Firebase project
+var defaultProject = firebase.initializeApp(config);
+
+console.log(defaultProject.name);  // "[DEFAULT]"
+
+// Access Firebase services using shorthand notation
+defaultStorage = firebase.storage();
+defaultDatabase = firebase.database();
