@@ -9,6 +9,13 @@ body{
 	margin: auto;
 	font-family: 'Roboto', sans-serif;
 }
+/*links */
+a:link,a:visited{
+		color: #7E7A7A;
+}
+a:hover,a:active{
+	color:#F3BD54;
+}
 /* Full-width inputs */
 input[type=text], input[type=password], input[type=vpassword], input[type=user], input[type=email]{
   width: 90%;
@@ -99,11 +106,13 @@ span.psw {
   }
 }
 hr{
-	border-width: 2px;
+	border-width: 1px;
 	border-color: #F3BD54;
 	width:90%;
 	display: block;
-	border-style: dashed;
+	border-style:solid;
+	margin-top: 0;
+
 
 }
 </style>
@@ -117,7 +126,8 @@ hr{
 	  </div>
 
 	  <div class="container">
-			<p class= "serif" style= "text-align: left; padding-top: 0px; padding-left:25px;margin-top: 5px; font-size: 18px;">Make an account</p>
+			<p class= "serif" style= "text-align: left; padding-top: 0px; padding-left:25px;margin-top: 5px; font-size: 18px;margin-bottom: 2px;">
+				Make an account</p>
 			<hr>
 			<div class="fill">
 	    <input type="text" placeholder="Full Name" name="fname" required>
