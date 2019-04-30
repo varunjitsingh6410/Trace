@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 <style>
 
 body{
 	max-width: 500px;
 	margin: auto;
-	padding-top: 100px;
+	font-family: 'Roboto', sans-serif;
 }
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=vpassword], input[type=user], input[type=email]{
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -18,6 +18,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   border-width: 0 0 2px;
 	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 input[type=checkbox]{
 	text-align: left;
@@ -25,7 +26,9 @@ input[type=checkbox]{
 button[type=submit]{
 	font-size: 13px;
 }
-
+p.serif{
+	font-family: 'Open Sans', sans-serif;
+}
 /* Set a style for all buttons */
 button {
   background-color: #F3BD54;
@@ -37,6 +40,8 @@ button {
   width: 90%;
 	text-align: center;
 	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 }
 
 /* Add a hover effect for buttons */
@@ -53,11 +58,14 @@ button:hover {
 */
 /* Center the avatar image inside this container */
 .imgcontainer {
-  text-align: center;
+  text-align: left;
   margin: 12px;
+	margin-bottom: 0;
+	padding-top: 50px;
+	padding-left: 25px;
 }
 .avatar{
-	width:50%
+	width:30%
 }
 
 
@@ -68,12 +76,16 @@ button:hover {
 	width: 90%;
 	max-width: 500px;
 	text-align: center;
+	margin-bottom: 5px;
+	padding-top: 10px;
 }
 
-/* The "Forgot password" text */
+/* The "cancel text */
 span.psw {
-  float: right;
+  text-align: center;
   padding-top: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -86,27 +98,38 @@ span.psw {
     width: 100%;
   }
 }
+hr{
+	border-width: 2px;
+	border-color: #F3BD54;
+	width:90%;
+	display: block;
+	border-style: dashed;
+
+}
 </style>
 <head>
 	<title>Login</title>
 </head>
 <body>
-	<form action="action_page.php">
+	<form action="map.html">
 	  <div class="imgcontainer">
 	    <img src="paw logo2.png" alt="Avatar" class="avatar">
 	  </div>
 
 	  <div class="container">
-	    <input type="text" placeholder="User ID or Email Address" name="uname" required>
-
+			<p class= "serif" style= "text-align: left; padding-top: 0px; padding-left:25px;margin-top: 5px; font-size: 18px;">Make an account</p>
+			<hr>
+			<div class="fill">
+	    <input type="text" placeholder="Full Name" name="fname" required>
+			<input type="email" placeholder="Email Address" name="email" required>
+			<input type="user" placeholder="User ID" name="uname" required>
 	    <input type="password" placeholder="Password" name="psw" required>
-
-	    <button type="submit">Submit</button>
+			<input type="password" placeholder="Verify Password" name="psw" required>
+</div>
+	    <button type="submit">SIGN UP</button>
 				<br>
-	      <input type="checkbox" checked="checked" name="remember" > Remember me </input>
+				<span class="psw"><a href="index.html">cancel</a></span>
 	  </div>
-		<span class="psw"><a href="#">cancel</a></span>
-		<br>
 
 	</form>
 </body>
