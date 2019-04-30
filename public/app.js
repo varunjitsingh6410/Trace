@@ -44,3 +44,27 @@ console.log(defaultProject.name);  // "[DEFAULT]"
 // Access Firebase services using shorthand notation
 defaultStorage = firebase.storage();
 defaultDatabase = firebase.database();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
