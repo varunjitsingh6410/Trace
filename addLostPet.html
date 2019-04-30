@@ -3,15 +3,106 @@
 <head>
 	<title>Add Missing Pet</title>
 	<link rel="stylesheet" href="css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #F3BD54;
+  padding: 5px;
+	position: sticky;
+}
+/* Float the link section to the right */
+.header-right {
+  float: right;
+  width: 30%;
+	padding-right: 0;
+	padding-top: 10px;
+	text-align: right;
+	margin-right: 15px;
+}
+p{
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	text-align: center;
+	font-weight: bolder;
+	float: left;
+	margin-left: 130px;
+}
+/* Add padding to containers */
+.container {
+  padding: 16px;
+	margin: auto;
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	overflow: scroll;
+}
+/* Full-width inputs */
+input[type=text], input[type=location], input[type=date], input[type=reward], input[type=email], input[type=phone]{
+  width: 90%;
+  padding: 12px 20px;
+  margin:0;
+	outline: 0;
+  display: inline-block;
+  border-width: 0 0 2px;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	background: #FFFF;
+}
+input[type=desc]{
+	  width: 90%;
+	  padding: 12px 20px;
+		padding-bottom: 40px;
+	  margin-top: 15px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+		overflow: auto;
+	}
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 12px;
+}
+.avatar{
+	width:50%
+}
+</style>
+
 <body>
-	<div class="footer">
-		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
-		<a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
-		<a href="addLostPet.html"><img src="images/addcolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
-		<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
-		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<div class="header">
+  <p>ADD LOST PET</a>
+  <div class="header-right">
+    <img src="images/check.png" style="width:30%;">
+  </div>
+</div>
+
+	<div class="imgcontainer">
+		<img src="images/addPhoto.png" alt="Avatar" class="avatar">
 	</div>
+
+	<div class="container">
+		<div class="fill">
+		<input type="text" placeholder="Name" name="name" required>
+		<input type="location" placeholder="Location last seen" name="location" required>
+		<input type="date" placeholder="Date last seen" name="date" required>
+		<input type="desc" placeholder="Description of breed, appearance, and behaviour" name="desc">
+		<input type="reward" placeholder="Reward" name="reward">
+		<input type="email" placeholder="Contact email address" name="email" required>
+		<input type="phone" placeholder="Contact phone number" name="phone" required>
+</div>
+
+<div class="footer">
+	<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
+	<a href="addLostPet.html"><img src="images/addcolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+</div>
 </body>
 </html>
