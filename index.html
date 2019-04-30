@@ -3,13 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
+
 body{
 	max-width: 500px;
-	margin:auto;
+	margin: auto;
 	padding-top: 100px;
 }
 /* Full-width inputs */
@@ -19,15 +16,19 @@ input[type=text], input[type=password] {
   margin: 8px 0;
 	outline: 0;
   display: inline-block;
-	border-bottom: 1px solid;
-  border-width: 0 0 1px solid #ccc;
-  box-sizing: border-box;
-	left: 50%;
+  border-width: 0 0 2px;
+	box-sizing: border-box;
+}
+input[type=checkbox]{
+	text-align: left;
+}
+button[type=submit]{
+	font-size: 13px;
 }
 
 /* Set a style for all buttons */
 button {
-  background-color: #FFD37C;
+  background-color: #F3BD54;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -35,6 +36,7 @@ button {
   cursor: pointer;
   width: 90%;
 	text-align: center;
+	border-radius: 5px;
 }
 
 /* Add a hover effect for buttons */
@@ -62,13 +64,17 @@ button:hover {
 /* Add padding to containers */
 .container {
   padding: 16px;
+	margin: auto;
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
 }
 
-/* The "Forgot password" text */
+/* The "Forgot password" text
 span.psw {
   float: right;
   padding-top: 16px;
-}
+}*/
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -91,19 +97,22 @@ span.psw {
 	  </div>
 
 	  <div class="container">
-	    <input type="text" placeholder="User ID or Email Address" name="uname" required>
+	    <input type="text" placeholder="User ID or Email Address" name="uname" required></input>
 
-	    <input type="password" placeholder="Password" name="psw" required>
+	    <input type="password" placeholder="Password" name="psw" required></input>
 
 	    <button type="submit">Login</button>
-	    <label>
 				<br>
-	      <input type="checkbox" checked="checked" name="remember"> Remember me
+	      <input type="checkbox" checked="checked" name="remember" > Remember me </input>
+				<br>
+				<br>
+			<span class="psw">Forgot <a href="register.html">Password?</a></span>
+			<br><br>
+     <span class="psw">Don't have an account? <a href="register.html">Sign Up!</a></span>
 	  </div>
 
-	    <span class="psw">Forgot <a href="#">password?</a></span>
-			<br>
-			<span class="psw">Don't have an <a href="register.html">account?</a></span>
+
+
 	</form>
 </body>
 </html>
