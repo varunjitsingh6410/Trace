@@ -2,16 +2,15 @@ Team Name: Ferrets
 
 Application Name: Trace
 
-Names
-Thao Nguyen
-Varun Jit Singh
-Sasri Dedigama
+Names:
+Thao Nguyen,
+Varun Jit Singh,
+Sasri Dedigama,
 Yumi Minami
-
 ## How did our idea change
 
-In our initial idea we were going to do lost people and pets but after further discussion we decided to choose
-to do just lost pets.
+In our initial project idea we were planning to do both lost people and pets,
+but after further discussion we decided to choose to focus just on pets.
 
 
 ## UI Skeleton Webpages
@@ -28,9 +27,9 @@ to do just lost pets.
 ![](uiskeleton5.PNG)
 #### Add
 ![](uiskeleton6.PNG)
-#### Notifications
+#### Alerts
 ![](uiskeleton7.PNG)
-#### Profile
+#### Account
 ![](uiskeleton8.PNG)
 #### Pet
 ![](uiskeleton9.PNG)
@@ -40,10 +39,22 @@ to do just lost pets.
 
 ## Differences
 
-For the most part the paper prototypes and ui skeleton are identical.
-Some of the key differences are;
-1) the footer nav bar has the map , list , add , notifications and profile
-2) the login pages has a sign up and forgot password option
-3) we added a notifications to notify the user about updates on posts they follow
-4) we choose to have seperate tabs for list view and map view
-5) theres no toggling between people and pets because we aren't doing pets anymore.
+For the most part we kept most of our initial ideas within the paper prototype.
+Some of the key differences are:
+Navigation Bar
+We finalized the navigation bar to have map view, list view, add pets, alerts, and account information.
+
+Login page
+We added a sign up and forgot password option.
+
+Map/List page
+We removed the toggling between people and pets because we decided to focus on pets instead.
+We decided to keep the map view and list view on separate pages.
+
+Alerts
+This page was added to allow the users to keep track of all the updates on the pets
+they follow.
+
+Account
+We added more capabilities to the user including editing their personal information as
+well as somewhere to keep track of their posts and the posts they're following.
