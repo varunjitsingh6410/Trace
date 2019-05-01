@@ -8,7 +8,7 @@ Varun Jit Singh
 Sasri Dedigama
 Yumi Minami
 
-## How did our idea change?
+## How did our idea change
 
 In our initial idea we were going to do lost people and pets but after further discussion we decided to choose 
 to do just lost pets. 
