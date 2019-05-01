@@ -18,6 +18,8 @@
 
 <script type="text/javascript" src="app.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
 body{
 	max-width: 500px;
@@ -130,7 +132,7 @@ span.psw {
 
 	    <input type="password" placeholder="Password" name="psw" required></input>
 
-	    <button type="submit" >LOGIN</button>
+	    <button type="submit" id="submitBtn">LOGIN</button>
 				<br>
 				<div class="remember">
 	      <input type="checkbox" checked="checked" name="remember"> Remember me </input>
@@ -141,6 +143,23 @@ span.psw {
 			<br><br>
      <span class="psw" style="font-size: 12px;">Don't have an account? <a href="register.html">Sign Up!</a></span>
 	  </div>
+
+
+    <script type="text/javascript">
+      $(document).ready(() => {
+        console.log("Hello browser");
+
+        $('#submitBtn').click(() => {
+          console.log("clicked");
+
+          $.ajax({
+
+          });
+
+        });
+
+      });
+    </script>
 
 
 
