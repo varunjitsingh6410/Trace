@@ -3,9 +3,91 @@
 <head>
 	<title>List</title>
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #F6F6F6;
+  padding: 5px;
+	position: sticky;
+}
+button{
+	border: none;
+	background-color: #F6F6F6;
+}
+hr{
+	border-width: 1px;
+	border-color: #DBDBDB;
+	display: block;
+	border-style:solid;
+	margin-top: 0;
+}
+input[type=text]{
+	background-color: #F6F6F6;
+	width:70%;
+	padding: 5px;
+	outline: 0;
+	height: 25px;
+	display: inline-block;
+	border-width: 0 0 2px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+}
+.header-right{
+	float: right;
+	width:10%;
+	padding: 0;
+}
+.column{
+	background-color: #FFFF;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+}
+p.name{
+	background-color: #F3BD54;
+	color: #FFFF;
+	text-align: center;
+	padding: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+label{
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #F3BD54;
+	text-align: left;
+	display: inline-block;
+}
+p.address{
+	display: inline-block;
+	text-align: right;
+}
+</style>
 <body>
+	<div class="header">
+		<input type="text" placeholder="SEARCH">
+		<img src="images/search.png" style="width:10%; float:left;">
+		<div class="header-right">
+		<button type="button"><img src="images/filter.png" style="width:70%; float:right;padding:10px"></button>
+		</div>
+	</div>
+		<div class="column">
+			<img src="images/shiba.png" style="width:37%; float: left; margin: 0px; padding:0;">
+			<p class="name" style="margin: 0px;">GEORGE</p>
+			<label>DATE</label>
+			<p class="address">4/29/2019</p>
+			<br>
+			<label>LOCATION</label>
+			<p class="address">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
+			<br>
+			<label>REWARD</label>
+			<p class="address">$1000</p>
+			<hr>
+		</div>
+
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="list.html"><img src="images/listcolor.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>

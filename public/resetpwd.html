@@ -9,13 +9,7 @@ body{
 	margin: auto;
 	font-family: 'Roboto', sans-serif;
 }
-/*links */
-a:link,a:visited{
-		color: #7E7A7A;
-}
-a:hover,a:active{
-	color:#F3BD54;
-}
+
 /* Full-width inputs */
 input[type=text], input[type=password], input[type=vpassword], input[type=user], input[type=email]{
   width: 90%;
@@ -33,7 +27,7 @@ input[type=checkbox]{
 button[type=submit]{
 	font-size: 13px;
 }
-p.serif{
+p{
 	font-family: 'Open Sans', sans-serif;
 }
 /* Set a style for all buttons */
@@ -49,6 +43,12 @@ button {
 	border-radius: 5px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+}
+.instruction{
+  width: 90%;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 15px;
 }
 
 /* Add a hover effect for buttons */
@@ -86,15 +86,6 @@ button:hover {
 	margin-bottom: 5px;
 	padding-top: 10px;
 }
-
-/* The "cancel text */
-span.psw {
-  text-align: center;
-  padding-top: 16px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-}
-
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -104,6 +95,20 @@ span.psw {
   .cancelbtn {
     width: 100%;
   }
+}
+/* The "cancel text */
+span.psw {
+  text-align: center;
+  padding-top: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+}
+/*links */
+a:link,a:visited{
+		color: #7E7A7A;
+}
+a:hover,a:active{
+	color:#F3BD54;
 }
 hr{
 	border-width: 1px;
@@ -120,25 +125,24 @@ hr{
 	<title>Login</title>
 </head>
 <body>
-	<form action="map.html">
+	<form action="index.html">
 	  <div class="imgcontainer">
 	    <img src="images/paw logo2.png" alt="Avatar" class="avatar">
 	  </div>
 
 	  <div class="container">
 			<p class= "serif" style= "text-align: left; padding-top: 0px; padding-left:25px;margin-top: 5px; font-size: 18px;margin-bottom: 2px;">
-				Make an account</p>
+				Reset password</p>
 			<hr>
+      <div class ="instruction">
+      <p>Enter your email address below and we will send you a link to reset your password.</p>
+    </div>
 			<div class="fill">
-	    <input type="text" placeholder="Full Name" name="fname" required>
 			<input type="email" placeholder="Email Address" name="email" required>
-			<input type="user" placeholder="User ID" name="uname" required>
-	    <input type="password" placeholder="Password" name="psw" required>
-			<input type="password" placeholder="Verify Password" name="psw" required>
 </div>
-	    <button type="submit">SIGN UP</button>
+	    <button type="submit">RESET PASSWORD</button>
 				<br>
-				<span class="psw"><a href="index.html">cancel</a></span>
+        <span class="psw"><a href="index.html">cancel</a></span>
 	  </div>
 
 	</form>
