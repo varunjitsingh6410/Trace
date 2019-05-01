@@ -26,14 +26,17 @@ to do just lost pets.
 ![](uiskeleton4.PNG)
 #### List View
 ![](uiskeleton5.PNG)
-#### Add 
+#### Add
 ![](uiskeleton6.PNG)
 #### Notifications
 ![](uiskeleton7.PNG)
 #### Profile
 ![](uiskeleton8.PNG)
+#### Pet
 ![](uiskeleton9.PNG)
+#### Add Update
 ![](uiskeleton10.PNG)
+
 
 ## Differences
 
