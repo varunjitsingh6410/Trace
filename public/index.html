@@ -122,7 +122,7 @@ span.psw {
 </head>
 <body>
 
-	<form action="map.html">
+	<form action= 'javascript:;' onsubmit="getFormUrl()">
 	  <div class="imgcontainer">
 	    <img src="images/paw logo2.png" alt="Avatar" class="avatar">
 	  </div>
@@ -148,7 +148,7 @@ span.psw {
 <script type="text/javascript">
   $(document).ready(() => {
     console.log("hellloooooo");
-
+    var formUrl = "";
     $('#loginBtn').click(() => {
 
       let loginUrl = "users/"+ $("#userId").val();
@@ -158,15 +158,26 @@ span.psw {
       	url: loginUrl,
       	type: 'GET',
       	dataType: 'json',
+
+      	
       	success: (data) => {
       		console.log("data we got: ", data);
-      		if (data.password == $("#userId").val()){
-      			console.log("Correct password");
+      		if (data.password == $("#passwordId").val()){
+      			console.log("Correct password", $("#passwordId").val(), data.password);
+      			formUrl = "map.html";
+      			document.location.href = formUrl;
+      			//self.location = mapUrl
       		} else {
-      			console.log("Invalid password");
+      			console.log("Invalid password", $("#passwordId").val(), data.password);
+      			formUrl = "index.html";
+      			alert("Invalid password");
       		}
       	}
       });
+
+		function getFormUrl() {
+			return formUrl;
+      	}
       //console.log("after ajazx");
     });
 
