@@ -7,63 +7,56 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
+html, body {
+	overflow:hidden;
+}
 a, a:visited{
 	color: black;
 }
 
 label{
-	margin-left:15px;
+	margin-left:10px;
 	font-family: 'Roboto', sans-serif;
-	padding: 15px;
+	padding: 10px;
 }
-p{
-	margin-left:15px;
-	font-family: 'Roboto', sans-serif;
-	display: inline-block;
-	font-size: 14px;
-	margin: 5px;
+
+p.detail {
+	font-size:12px;
 }
-p.in{
-	color: #F3BD54;
-	margin: 5px;
-}
-br{
-	line-height: 5%;
-}
-hr{
-	margin: 15px;
+
+hr {
 	width: 100%;
-	margin-bottom: 0;
 }
+
 </style>
 <body>
 	<div class="header">
-	<p style="font-size: 16px; margin: 16px;">MY PROFILE</p>
+	<h1>MY ACCOUNT</h1>
 </div>
 <div class="info">
-	<label style="font-weight: bold; float:left; padding-top:20px; padding-bottom:10;">Personal Information</label>
+		<h4>Personal Information</h4>
 		<a href= "editInfo.html"><img src="images/edit.png" style="width:11%; float:right; padding:20px; padding-bottom:10px;"></a>
 		<br>
 <hr>
 <br>
-		<p class="in">USER ID</p>
-		<p>Helloitsjohn</p>
+		<label>USER ID</label>
+		<p class="detail">Helloitsjohn</p>
 		<br>
-		<p class="in">NAME</p>
-		<p>John Doe</p>
+		<label>NAME</label>
+		<p class="detail">John Doe</p>
 		<br>
-		<p class="in">PHONE NUMBER</p>
-		<p>(123)456-7890</p>
+		<label>PHONE NUMBER</label>
+		<p class="detail">(123)456-7890</p>
 		<br>
-		<p class="in">EMAIL</p>
-		<p>example@example.com</p>
+		<label>EMAIL</label>
+		<p class="detail">example@example.com</p>
 		<br>
 </div>
 <div class="posts">
-	<label style="font-weight: bold; float:left; padding-top:20px; padding-bottom:10px;;">My Posts</label>
+	<h4>My posts</h4>
 	<hr>
 	<img src="images/shiba.png" style="width:30%; float: left; margin: 15px;">
-	<p style="margin: 15px;"> GEORGE</p>
+	<label> GEORGE</label>
 	<br>
 	<a href= "editPet.html"><img src="images/edit.png" style="width:11%; padding:10px;"></a>
 	<br>
@@ -72,7 +65,7 @@ hr{
 </div>
 <div class="follow">
 	<hr>
-	<a href= "follows.html"><label style="font-weight: bold; float:left; padding-top:15px; ">Followed Posts</label></a>
+	<a href= "follows.html"><h4>Followed Posts</h4></a>
 	<hr>
 </div>
 	<div class="footer">

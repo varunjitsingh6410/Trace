@@ -11,116 +11,66 @@
 /* Style the header with a grey background and some padding */
 
 
-.header {
-  overflow: hidden;
-  background-color: #F6F6F6;
-  height:55px;
-	position: sticky
-}
+	#searchbar {
+	  background-color: #F6F6F6;
+	}
 
-button{
-	border: none;
-	background-color: #F6F6F6;
-}
+	.header-right {
+		width:10%;
+		padding: 0px;
+	}
 
-hr{
-	border-width: 1px;
-	border-color: white;
-	display: block;
-	border-style:solid;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-input[type=text]{
-	background-color: #F6F6F6;
-	width:70%;
-	padding: 5px;
-	outline: 0;
-	height: 25px;
-	display: inline-block;
-	border-width: 0 0 2px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
-}
+	hr {
+		border-width: 0px;
+		border-color: white;
+	}
 
-.column{
-	background-color: #FFFF;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-}
-p.name{
-	background-color: #F3BD54;
-	color: #FFFF;
-	text-align: center;
-	padding: 5px;
-  font-family: 'Open Sans', sans-serif;
-}
-label{
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	color: #F3BD54;
-	text-align: left;
-	display: inline-block;
-}
-p.address{
-	display: inline-block;
-	text-align: left;
-	padding-left: 10px;
-	word-wrap: break-word;
-	width: 160px;
-}
-.space{
-		margin-bottom: 42px;
-		margin-top: none;
-}
-a {
-	text-decoration: none;
-}
-a:visited{
-	color: black;
-}
-.header-right {
-  float: right;
-  width: 9%;
-	padding-top: 10px;
-	text-align: right;
-  margin-right: 15px;
-}
 
-.header-left {
-  float: left;
-  width: 9%;
-	padding-top: 10px;
-	text-align: left;
-  margin-left: 15px;
-}
-.header-right{
-	float: right;
-	width:10%;
-	padding: 0;
-}
+	.column {
+		background-color: #FFFF;
+		font-family: 'Roboto', sans-serif;
+		font-size: 12px;
+	}
+
+
+
+	.space {
+			margin-bottom: 42px;
+			margin-top: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a:visited {
+		color: black;
+	}
+
 
 </style>
 <body>
-	<div class="header">
+	<div id="searchbar" class="header">
 		<input type="text" placeholder="SEARCH" style="letter-spacing:.5px;padding-top:15px;">
-		<img src="images/search.png" style="width:10%; float:left;padding-top:10px;">
+		<img src="images/search.png" style="width:10%;float:left;padding-top:10px;padding-left:10px;">
 		<div class="header-right">
-		<button type="button"><img src="images/filter.png" style="width:100%;padding-top:16px;"></button>
+			<button id="filterbutton"type="button" ><img src="images/filter2.png"></button>
 		</div>
 	</div>
+
+
  <div class="column">
 	 <a href="pet.html">
-			<img src="images/shiba.png" style="width:36%; height:143.8px; float: left; margin: 0px; padding-right:5px;">
-			<p class="name" style="margin: 0px; font-weight:580;letter-spacing:1px">GEORGE</p>
+			<img src="images/shiba.png" style="width:36%; float: left; padding-right:10px;">
+			<h5>GEORGE</h5>
 			<label>DATE</label>
-			<p class="address">4/29/2019</p>
+			<p class="detail">4/29/2019</p>
 			<label>LOCATION</label>
-			<p class="address">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
+			<p class="detail">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
 			<label>REWARD</label>
-			<p class="address" style="margin-bottom: 0px;">$1000</p>
-		</a>
+			<p class="detail" style="margin-bottom: 0px;">$1000</p>
 			<hr>
+		</a>
 	</div>
 
 	<div class="footer">
@@ -131,6 +81,7 @@ a:visited{
 		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	</div>
 </body>
+
 <script>
 function multiplyNode(node, count, deep) {
     for (var i = 0, copy; i < count - 1; i++) {

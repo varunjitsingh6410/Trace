@@ -7,15 +7,6 @@
 </head>
 <style>
 
-  .header p {
-
-  	font-family: 'Open Sans', sans-serif;
-    float:left;
-  	color: white;
-  	font-weight: 600;
-    letter-spacing: 1px;
-    margin-left:90px;
-  }
   button {
     background-color: #F3BD54;
     color: white;
@@ -35,52 +26,18 @@
   button:hover {
     opacity: 0.8;
   }
+
   .column{
   	background-color: #FFFF;
   	font-family: 'Roboto', sans-serif;
   	font-size: 12px;
   }
-  p.name{
-  	background-color: #F3BD54;
-  	color: #FFFF;
-  	text-align: center;
-  	padding: 5px;
-    font-family: 'Open Sans', sans-serif;
-  }
-  label{
-  	font-family: 'Roboto', sans-serif;
-  	font-size: 12px;
-  	color: #F3BD54;
-  	text-align: left;
-  	display: inline-block;
-  }
-  p.address{
-  	display: inline-block;
-  	text-align: left;
-  	padding-left: 10px;
-  	word-wrap: break-word;
-  	width: 160px;
-  }
-  .space{
-  		margin-bottom: 42px;
-  		margin-top: none;
+
+  hr {
+    border-width: 0px;
+    border-color: white;
   }
 
-  .header-right {
-    float: right;
-    width: 9%;
-  	padding-top: 10px;
-  	text-align: right;
-    margin-right: 15px;
-  }
-
-  .header-left {
-    float: left;
-    width: 9%;
-  	padding-top: 10px;
-  	text-align: left;
-    margin-left: 15px;
-  }
 
 </style>
 <body>
@@ -89,16 +46,19 @@
     <a href="map.html"><img src="images/back.png" style="width:100%;"></a>
   </div>
 </div>
+
+
 <div class="column">
   <br>
-     <img src="images/shiba.png" style="width:36%; height:143.8px; float: left; margin: 0px; padding-right:5px;">
-     <p class="name" style="margin: 0px; font-weight:580;letter-spacing:1px">GEORGE</p>
-     <label>DATE</label>
-     <p class="address">4/29/2019</p>
-     <label>LOCATION</label>
-     <p class="address">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
-     <label>REWARD</label>
-     <p class="address" style="margin-bottom: 0px;">$1000</p>
+  <img src="images/shiba.png" style="width:36%; float: left; padding-right:10px;">
+  <h5>GEORGE</h5>
+  <label>DATE</label>
+  <p class="detail">4/29/2019</p>
+  <label>LOCATION</label>
+  <p class="detail">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
+  <label>REWARD</label>
+  <p class="detail" style="margin-bottom: 0px;">$1000</p>
+  <hr>
  </div>
   <center><a href="addupdate.html"><button> ADD UPDATE </button></a></center>
 
