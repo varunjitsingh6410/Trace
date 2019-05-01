@@ -16,14 +16,14 @@ to do just lost pets.
 
 ** UI Skeleton Webpages **
 
-![](uiskeleton1.png)
-![](uiskeleton2.png)
-![](uiskeleton3.png)
-![](uiskeleton4.png)
-![](uiskeleton5.png)
-![](uiskeleton6.png)
-![](uiskeleton7.png)
-![](uiskeleton8.png)
+![](uiskeleton1.PNG)
+![](uiskeleton2.PNG)
+![](uiskeleton3.PNG)
+![](uiskeleton4.PNG)
+![](uiskeleton5.PNG)
+![](uiskeleton6.PNG)
+![](uiskeleton7.PNG)
+![](uiskeleton8.PNG)
 
 ** Differences **
 
