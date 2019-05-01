@@ -8,15 +8,17 @@ Varun Jit Singh
 Sasri Dedigama
 Yumi Minami
 
-**How did our idea change?**
+##How did our idea change?##
 
 In our initial idea we were going to do lost people and pets but after further discussion we decided to choose 
 to do just lost pets. 
 
 
-** UI Skeleton Webpages **
+##UI Skeleton Webpages##
 
+###Login Page###
 ![](uiskeleton1.PNG)
+###Forgot Password###
 ![](uiskeleton2.PNG)
 ![](uiskeleton3.PNG)
 ![](uiskeleton4.PNG)
@@ -25,7 +27,7 @@ to do just lost pets.
 ![](uiskeleton7.PNG)
 ![](uiskeleton8.PNG)
 
-** Differences **
+##Differences##
 
 For the most part the paper prototypes and uiskeleton are identical.
 Some of the key differences are;
