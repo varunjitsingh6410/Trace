@@ -40,8 +40,15 @@ console.log(defaultProject.name);  // "[DEFAULT]"
 defaultStorage = firebase.storage();
 defaultDatabase = firebase.database();*/
 
+//console.log("Hello world");
+const express = require('express');
+const app = express();
 
+app.use(express.static('../public'));
 
+app.listen (3000, () => {
+  console.log("Server started");
+});
 
 
 
