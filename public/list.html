@@ -9,23 +9,27 @@
 </head>
 <style>
 /* Style the header with a grey background and some padding */
+
+
 .header {
   overflow: hidden;
   background-color: #F6F6F6;
-  padding: 5px;
+  height:55px;
+	position: sticky
 }
+
 button{
 	border: none;
 	background-color: #F6F6F6;
 }
+
 hr{
 	border-width: 1px;
-	border-color: #DBDBDB;
+	border-color: white;
 	display: block;
 	border-style:solid;
 	margin-top: 0;
 	margin-bottom: 0;
-
 }
 input[type=text]{
 	background-color: #F6F6F6;
@@ -38,12 +42,7 @@ input[type=text]{
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 }
-.header-right{
-	float: right;
-	width:10%;
-	padding: 0;
 
-}
 .column{
 	background-color: #FFFF;
 	font-family: 'Roboto', sans-serif;
@@ -74,28 +73,53 @@ p.address{
 		margin-bottom: 42px;
 		margin-top: none;
 }
+a {
+	text-decoration:none;
+}
+
+.header-right {
+  float: right;
+  width: 9%;
+	padding-top: 10px;
+	text-align: right;
+  margin-right: 15px;
+}
+
+.header-left {
+  float: left;
+  width: 9%;
+	padding-top: 10px;
+	text-align: left;
+  margin-left: 15px;
+}
+.header-right{
+	float: right;
+	width:10%;
+	padding: 0;
+}
+
 </style>
 <body>
 	<div class="header">
-		<input type="text" placeholder="SEARCH">
-		<img src="images/search.png" style="width:10%; float:left;">
+		<input type="text" placeholder="SEARCH" style="letter-spacing:.5px;padding-top:15px;">
+		<img src="images/search.png" style="width:10%; float:left;padding-top:10px;">
 		<div class="header-right">
-		<button type="button"><img src="images/filter.png" style="width:70%; float:right;padding:10px"></button>
+		<button type="button"><img src="images/filter.png" style="width:100%;padding-top:16px;"></button>
 		</div>
 	</div>
  <div class="column">
-			<img src="images/shiba.png" style="width:38.3%; float: left; margin: 0px; padding:0;">
-			<p class="name" style="margin: 0px;">GEORGE</p>
+	 <a href="pet.html">
+			<img src="images/shiba.png" style="width:36%; height:143.8px; float: left; margin: 0px; padding-right:5px;">
+			<p class="name" style="margin: 0px; font-weight:580;letter-spacing:1px">GEORGE</p>
 			<label>DATE</label>
 			<p class="address">4/29/2019</p>
-			<br>
 			<label>LOCATION</label>
 			<p class="address">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
-			<br>
 			<label>REWARD</label>
 			<p class="address" style="margin-bottom: 0px;">$1000</p>
+		</a>
 			<hr>
-		</div>
+	</div>
 
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
@@ -113,6 +137,6 @@ function multiplyNode(node, count, deep) {
     }
 }
 
-multiplyNode(document.querySelector('.column'), 5, true);
+multiplyNode(document.querySelector('.column'), 4, true);
 </script>
 </html>
