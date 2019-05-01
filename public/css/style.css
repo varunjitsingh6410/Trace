@@ -3,7 +3,15 @@ html, body {
   padding: 0;
   font-family: 'Roboto', serif;
 }
-
+.header {
+  overflow: hidden;
+  background-color: #F3BD54;
+  padding: 5px;
+	position: sticky;
+	font-family: 'Open Sans', sans-serif;
+	color: #FFFF;
+	text-align: center;
+}
 .footer {
   position: fixed;
   left: 0;
@@ -11,4 +19,12 @@ html, body {
   width: 100%;
   background-color: #F6F6F6;
   text-align: center;
+}
+
+hr{
+	border-width: 1px;
+	border-color: #F3BD54;
+	display: block;
+	border-style:solid;
+	margin-top: 0;
 }
