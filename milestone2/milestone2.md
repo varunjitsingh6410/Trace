@@ -14,7 +14,7 @@ In our initial idea we were going to do lost people and pets but after further d
 to do just lost pets. 
 
 
-### UI Skeleton Webpages
+## UI Skeleton Webpages
 
 #### Login Page
 ![](uiskeleton1.PNG)
