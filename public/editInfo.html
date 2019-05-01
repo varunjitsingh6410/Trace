@@ -8,127 +8,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-/* Style the header with a grey background and some padding */
 
 
-button{
-	border: none;
-	background-color: #F6F6F6;
-}
 
-hr{
-	border-width: 1px;
-	border-color: white;
-	display: block;
-	border-style:solid;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-input[type=text]{
-	background-color: #F6F6F6;
-	width:70%;
-	padding: 5px;
-	outline: 0;
-	height: 25px;
-	display: inline-block;
-	border-width: 0 0 2px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
-}
 
-.column{
-	background-color: #FFFF;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-}
-p.name{
-	background-color: #F3BD54;
-	color: #FFFF;
-	text-align: center;
-	padding: 5px;
-  font-family: 'Open Sans', sans-serif;
-}
-label{
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	color: #F3BD54;
-	text-align: left;
-	display: inline-block;
-}
-p.address{
-	display: inline-block;
-	text-align: left;
-	padding-left: 10px;
-	word-wrap: break-word;
-	width: 160px;
-}
-/* Full-width inputs */
-input[type=text], input[type=password], input[type=vpassword], input[type=user], input[type=email]{
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-	outline: 0;
-  display: inline-block;
-  border-width: 0 0 2px;
-	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
-}
-/* Add padding to containers */
-.container {
-  padding: 16px;
-	margin: auto;
-	width: 90%;
-	max-width: 500px;
-	text-align: center;
-	margin-bottom: 5px;
-	padding-top: 10px;
-}
 
-button[type=submit]{
-	font-size: 13px;
-}
-p.serif{
-	font-family: 'Open Sans', sans-serif;
-}
-/* Set a style for all buttons */
-button {
-  background-color: #F3BD54;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 90%;
-	text-align: center;
-	border-radius: 5px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-}
-.header-left {
-  float: left;
-  width: 9%;
-	padding-top: 10px;
-	text-align: left;
-  margin-left: 15px;
-}
 </style>
 <body>
 	<div class="header">
     <div class="header-left">
       <a href="profile.html"><img src="images/back.png" style="width:100%; float: left;"></a>
     </div>
-		<p>Edit Profile</p>
+		<h1>EDIT ACCOUNT</h1>
 	</div>
   <form action="profile.html">
   <div class="container">
     <div class="fill">
-    <input type="user" placeholder="Full Name" name="fname" >
+    <input type="text" placeholder="Full Name" name="text" >
     <input type="email" placeholder="Email Address" name="email" >
-    <input type="user" placeholder="User ID" name="uname" >
-    <input type="user" placeholder="Phone Number" name="phone">
+    <input type="text" placeholder="User ID" name="text" >
+    <input type="text" placeholder="Phone Number" name="phone">
     <input type="password" placeholder="Password" name="psw">
     <input type="password" placeholder="Verify Password" name="psw">
-    <button type="submit">SAVE EDITS</button>
+		<br><br>
+    <button id="yellowbutton" type="submit">SAVE EDITS</button>
 </div>
 </form>
   </div>
