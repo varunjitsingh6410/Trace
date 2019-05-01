@@ -2,36 +2,48 @@ Team Name: Ferrets
 
 Application Name: Trace
 
-Names 
+Names
 Thao Nguyen
 Varun Jit Singh
 Sasri Dedigama
 Yumi Minami
 
-**How did our idea change?**
+## How did our idea change
 
-In our initial idea we were going to do lost people and pets but now we 
-
-
-
-
-![](prototype1p1.png)
-![](prototype1p2.png)
-![](prototype1p3.png)
-![](prototype1p4.png)
-![](prototype1p5.png)
+In our initial idea we were going to do lost people and pets but after further discussion we decided to choose
+to do just lost pets.
 
 
+## UI Skeleton Webpages
+
+#### Login Page
+![](uiskeleton1.PNG)
+#### Forgot Password
+![](uiskeleton2.PNG)
+#### Make Account
+![](uiskeleton3.PNG)
+#### Map View
+![](uiskeleton4.PNG)
+#### List View
+![](uiskeleton5.PNG)
+#### Add
+![](uiskeleton6.PNG)
+#### Notifications
+![](uiskeleton7.PNG)
+#### Profile
+![](uiskeleton8.PNG)
+#### Pet
+![](uiskeleton9.PNG)
+#### Add Update
+![](uiskeleton10.PNG)
 
 
+## Differences
 
-![](prototype2p1.png)
-![](prototype2p2.png)
-
-
-
-
-![](storyboard1.png)
-
-
-![](storyboard2.png)
+For the most part the paper prototypes and ui skeleton are identical.
+Some of the key differences are;
+1) the footer nav bar has the map , list , add , notifications and profile
+2) the login pages has a sign up and forgot password option
+3) we added a notifications to notify the user about updates on posts they follow
+4) we choose to have seperate tabs for list view and map view
+5) theres no toggling between people and pets because we aren't doing pets anymore.

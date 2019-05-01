@@ -51,7 +51,6 @@ input[type=desc]{
 }
 
 p {
-
 	font-family: 'Open Sans', sans-serif;
   float:left;
 	color: white;
@@ -77,31 +76,35 @@ p {
 }
 
 
+
 </style>
 
 <body>
-	<div class="header">
-  <p>ADD LOST PET</p>
+  <div class="header">
+  <div class="header-left">
+    <a href="profile.html"><img src="images/back.png" style="width:100%;"></a>
+  </div>
   <div class="header-right">
-    <a href="addLostPet.html"><img src="images/check.png" style="width:100%;"></a>
+    <a href="pet.html"><img src="images/check.png" style="width:100%;"></a>
   </div>
 </div>
 
+
 	<div class="imgcontainer">
 		<br>
-		<a href="#"><img src="images/addPhoto.png" class="addphoto"></a>
+		<a href="#"><img src="images/shiba.png" class="addphoto"></a>
 	</div>
 
 	<div class="container">
 		<div class="fill">
-		<input type="text" placeholder="Name" name="name" required>
-		<input type="location" placeholder="Location last seen" name="location" required>
-		<input type="date" placeholder="Date last seen" name="date" required>
-		<input type="text" placeholder="Breed" name="name" required>
-		<input type="desc" placeholder="Description of physical traits and behavior" name="desc">
-		<input type="reward" placeholder="Reward" name="reward">
-		<input type="email" placeholder="Contact email address" name="email" required>
-		<input type="phone" placeholder="Contact phone number" name="phone" required>
+		<input type="text" placeholder="George" name="name" required>
+		<input type="location" placeholder="Ralph's Parking Lot" name="location" required>
+		<input type="text" placeholder="4/29/19" name="date" required>
+		<input type="text" placeholder="Shiba Inu" name="name" required>
+		<input type="desc" placeholder="Has tan fur and is wearing a blue bandana" name="desc">
+		<input type="reward" placeholder="$1000" name="reward">
+		<input type="email" placeholder="example@example.com" name="email" required>
+		<input type="phone" placeholder="(123)456-7891" name="phone" required>
 	</div>
 
 <div class="footer">

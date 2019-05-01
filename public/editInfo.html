@@ -11,13 +11,6 @@
 /* Style the header with a grey background and some padding */
 
 
-.header {
-  overflow: hidden;
-  background-color: #F6F6F6;
-  height:55px;
-	position: sticky
-}
-
 button{
 	border: none;
 	background-color: #F6F6F6;
@@ -69,24 +62,48 @@ p.address{
 	word-wrap: break-word;
 	width: 160px;
 }
-.space{
-		margin-bottom: 42px;
-		margin-top: none;
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=vpassword], input[type=user], input[type=email]{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+	outline: 0;
+  display: inline-block;
+  border-width: 0 0 2px;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
-a {
-	text-decoration: none;
-}
-a:visited{
-	color: black;
-}
-.header-right {
-  float: right;
-  width: 9%;
+/* Add padding to containers */
+.container {
+  padding: 16px;
+	margin: auto;
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
+	margin-bottom: 5px;
 	padding-top: 10px;
-	text-align: right;
-  margin-right: 15px;
 }
 
+button[type=submit]{
+	font-size: 13px;
+}
+p.serif{
+	font-family: 'Open Sans', sans-serif;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #F3BD54;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+	text-align: center;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
 .header-left {
   float: left;
   width: 9%;
@@ -94,35 +111,27 @@ a:visited{
 	text-align: left;
   margin-left: 15px;
 }
-.header-right{
-	float: right;
-	width:10%;
-	padding: 0;
-}
-
 </style>
 <body>
 	<div class="header">
-		<input type="text" placeholder="SEARCH" style="letter-spacing:.5px;padding-top:15px;">
-		<img src="images/search.png" style="width:10%; float:left;padding-top:10px;">
-		<div class="header-right">
-		<button type="button"><img src="images/filter.png" style="width:100%;padding-top:16px;"></button>
-		</div>
+    <div class="header-left">
+      <a href="profile.html"><img src="images/back.png" style="width:100%; float: left;"></a>
+    </div>
+		<p>Edit Profile</p>
 	</div>
- <div class="column">
-	 <a href="pet.html">
-			<img src="images/shiba.png" style="width:36%; height:143.8px; float: left; margin: 0px; padding-right:5px;">
-			<p class="name" style="margin: 0px; font-weight:580;letter-spacing:1px">GEORGE</p>
-			<label>DATE</label>
-			<p class="address">4/29/2019</p>
-			<label>LOCATION</label>
-			<p class="address">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
-			<label>REWARD</label>
-			<p class="address" style="margin-bottom: 0px;">$1000</p>
-		</a>
-			<hr>
-	</div>
-
+  <form action="profile.html">
+  <div class="container">
+    <div class="fill">
+    <input type="user" placeholder="Full Name" name="fname" >
+    <input type="email" placeholder="Email Address" name="email" >
+    <input type="user" placeholder="User ID" name="uname" >
+    <input type="user" placeholder="Phone Number" name="phone">
+    <input type="password" placeholder="Password" name="psw">
+    <input type="password" placeholder="Verify Password" name="psw">
+    <button type="submit">SAVE EDITS</button>
+</div>
+</form>
+  </div>
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="list.html"><img src="images/listcolor.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
@@ -131,14 +140,5 @@ a:visited{
 		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	</div>
 </body>
-<script>
-function multiplyNode(node, count, deep) {
-    for (var i = 0, copy; i < count - 1; i++) {
-        copy = node.cloneNode(deep);
-        node.parentNode.insertBefore(copy, node);
-    }
-}
 
-multiplyNode(document.querySelector('.column'), 4, true);
-</script>
 </html>
