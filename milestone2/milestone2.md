@@ -16,15 +16,21 @@ to do just lost pets.
 
 ### UI Skeleton Webpages
 
-### Login Page
+#### Login Page
 ![](uiskeleton1.PNG)
-### Forgot Password
+#### Forgot Password
 ![](uiskeleton2.PNG)
+#### Make Account
 ![](uiskeleton3.PNG)
+#### Map View
 ![](uiskeleton4.PNG)
+#### List View
 ![](uiskeleton5.PNG)
+#### Add 
 ![](uiskeleton6.PNG)
+#### Notifications
 ![](uiskeleton7.PNG)
+#### Profile
 ![](uiskeleton8.PNG)
 
 ## Differences
