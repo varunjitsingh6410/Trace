@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+ <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+    authDomain: "trace-43d6f.firebaseapp.com",
+    databaseURL: "https://trace-43d6f.firebaseio.com",
+    projectId: "trace-43d6f",
+    storageBucket: "trace-43d6f.appspot.com",
+    messagingSenderId: "241015211966",
+    appId: "1:241015211966:web:d19af455bd83d38c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-<script type="text/javascript" src="app.js"></script>
 
-<!-- update the version number as needed -->
-<script defer src="/__/firebase/5.10.1/firebase-app.js"></script>
-<!-- include only the Firebase features as you need -->
-<script defer src="/__/firebase/5.10.1/firebase-auth.js"></script>
-<script defer src="/__/firebase/5.10.1/firebase-database.js"></script>
-<script defer src="/__/firebase/5.10.1/firebase-messaging.js"></script>
-<script defer src="/__/firebase/5.10.1/firebase-storage.js"></script>
-<!-- initialize the SDK after all desired features are loaded -->
-<script defer src="/__/firebase/init.js"></script>
+<script type="text/javascript" src="app.js"></script>
 
 <script type="text/javascript" src="app.js"></script>
 
@@ -146,6 +157,14 @@ span.psw {
 
 
 <script type="text/javascript">
+
+  $(document).ready(() => {
+    console.log("Hello World");
+    const database = firebase.database();
+    console.log("Hello World 2");
+  });
+
+  /*
   $(document).ready(() => {
     console.log("hellloooooo");
     var formUrl = "";
@@ -182,7 +201,8 @@ span.psw {
       //console.log("after ajazx");
     });
 
-  });
+  });*/
+
 </script>
 
 
