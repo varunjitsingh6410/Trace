@@ -10,6 +10,63 @@
 	  overflow:hidden;
 	}
 
+
+	#searchbar {
+	  background-color: #F3BD54;
+	}
+
+	input[type=text]{
+	  background-color: #F3BD54;
+	  width:65%;
+	  outline: 0;
+	  height: 25px;
+	  display: inline-block;
+	  font-family: 'Open sans', sans-serif;
+	  font-size: 20px;
+		padding-top:15px;
+		letter-spacing:.5px;
+		font-weight: 500;
+	}
+
+	input[type="text"]::placeholder {
+    color: white;
+		opacity: 0.7;
+		font-family: 'Open sans', sans-serif;
+	  font-size: 20px;
+		letter-spacing:.5px;
+		font-weight: 500;
+	}
+
+
+	input {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+	}
+
+
+	#search {
+		width:30px;
+		float:left;
+		padding-top:12px;
+		padding-left:10px
+	}
+
+	#filterbutton {
+		border: none;
+		background-color: transparent;
+		float:right;
+	}
+
+	#filterbutton img {
+		width:30px;
+		padding-top: 12px;
+		padding-right:10px
+
+	}
+
 	.background {
 		z-index:-1;
 	}
@@ -20,23 +77,14 @@
 		left:150px;
 	}
 
-	#searchbar {
-	  background-color: #F6F6F6;
-	}
 
-	.header-right {
-		width:10%;
-		padding: 0px;
-	}
 
 </style>
 <body>
 	<div id="searchbar" class="header">
-		<input type="text" placeholder="SEARCH" style="letter-spacing:.5px;padding-top:15px;">
-		<img src="images/search.png" style="width:10%;float:left;padding-top:10px;padding-left:10px;">
-		<div class="header-right">
-			<button id="filterbutton"type="button" ><img src="images/filter2.png"></button>
-		</div>
+		<input type="text" placeholder="SEARCH">
+		<img id="search" src="images/search2.png">
+		<button id="filterbutton" type="button"><img src="images/filter2.png"></button>
 	</div>
 
 

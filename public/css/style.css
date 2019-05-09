@@ -19,6 +19,7 @@ html, body {
   overflow: hidden;
   background-color: #F3BD54;
   height:55px;
+  padding:5px;
 	position: sticky;
   font-family: 'Open Sans', serif;
   color: white;
@@ -49,14 +50,7 @@ hr {
 	margin-top: 0;
 }
 
-#filterbutton {
-  border: none;
-  background-color: #F6F6F6;
-}
-#filterbutton img {
-  width: 100%;
-  padding-top: 16px;
-}
+
 
 input[type=text]{
   background-color: #F6F6F6;

@@ -2,76 +2,187 @@
 <html>
 <head>
 	<title>List</title>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <style>
 /* Style the header with a grey background and some padding */
 
 
 	#searchbar {
-	  background-color: #F6F6F6;
+	  background-color: #F3BD54;
 	}
 
-	.header-right {
-		width:10%;
-		padding: 0px;
+	input[type=text]{
+	  background-color: #F3BD54;
+	  width:65%;
+	  outline: 0;
+	  height: 25px;
+	  display: inline-block;
+	  font-family: 'Open sans', sans-serif;
+	  font-size: 20px;
+		padding-top:15px;
+		letter-spacing:.5px;
+		font-weight: 500;
 	}
 
-	hr {
-		border-width: 0px;
-		border-color: white;
+	input[type="text"]::placeholder {
+    color: white;
+		opacity: 0.7;
+		font-family: 'Open sans', sans-serif;
+	  font-size: 20px;
+		letter-spacing:.5px;
+		font-weight: 500;
 	}
 
 
-	.column {
-		background-color: #FFFF;
+	input {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+	}
+
+
+	ul {
+		list-style-type: none;
+	  padding: 0;
+		margin: 0;
+		font-size:16px;
+	}
+
+	li {
+		padding-left:130px;
+    background: white;
 		font-family: 'Roboto', sans-serif;
-		font-size: 12px;
+    font-size:12px;
+	  color: #555;
+	  font-weight:600;
+    position: relative;
+    height: 120px;
+	}
+
+	li span{
+    display: block;
+	}
+
+	li span:nth-child(1){
+		background-color: #969696;
+	  color: #FFFF;
+	  text-align: center;
+	  padding: 3px;
+	  font-family: 'Open Sans', sans-serif;
+	  margin: 0;
+	  font-size:12px;
+	  font-weight:580;
+	  letter-spacing:1px;
+	}
+
+	/*date*/
+	li span:nth-child(2){
+		position: absolute;
+		top:30px;
+		left:140px;
+		font-family: 'Roboto', sans-serif;
+	  font-size: 11px;
+	  font-weight:600;
+	  letter-spacing:1px;
+	  color: #F3BD54;
+	}
+
+	li span:nth-child(3){
+		position:absolute;
+		top:30px;
+		left: 210px;
+	}
+
+	/*location*/
+	li span:nth-child(4){
+		position: absolute;
+		top:50px;
+		left:140px;
+		font-family: 'Roboto', sans-serif;
+	  font-size: 11px;
+	  font-weight:600;
+	  letter-spacing:1px;
+	  color: #F3BD54;
+	}
+
+	li span:nth-child(5){
+		position:absolute;
+		top:50px;
+		left: 210px;
+	}
+
+	/*reward*/
+	li span:nth-child(6){
+		position: absolute;
+		top:100px;
+		left:140px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
 	}
 
 
-
-	.space {
-			margin-bottom: 42px;
-			margin-top: none;
+	li span:nth-child(7){
+		position:absolute;
+		top:100px;
+		left: 210px;
 	}
 
-	a {
-		text-decoration: none;
+
+	li img {
+		position: absolute;
+		top:0px;
+		left: 0px;
+		width:130px;
+		margin:0;
+		height:100%;
 	}
 
-	a:visited {
-		color: black;
+	#search {
+		width:30px;
+		float:left;
+		padding-top:12px;
+		padding-left:10px
 	}
+
+	#filterbutton {
+		border: none;
+		background-color: transparent;
+		float:right;
+	}
+
+	#filterbutton img {
+		width:30px;
+		padding-top: 12px;
+		padding-right:10px
+
+	}
+
 
 
 </style>
 <body>
 	<div id="searchbar" class="header">
-		<input type="text" placeholder="SEARCH" style="letter-spacing:.5px;padding-top:15px;">
-		<img src="images/search.png" style="width:10%;float:left;padding-top:10px;padding-left:10px;">
-		<div class="header-right">
-			<button id="filterbutton"type="button" ><img src="images/filter2.png"></button>
-		</div>
+		<input type="text" placeholder="SEARCH">
+		<img id="search" src="images/search2.png">
+	  <button id="filterbutton" type="button"><img src="images/filter2.png"></button>
 	</div>
 
 
- <div class="column">
-	 <a href="pet.html">
-			<img src="images/shiba.png" style="width:36%; float: left; padding-right:10px;">
-			<h5>GEORGE</h5>
-			<label>DATE</label>
-			<p class="detail">4/29/2019</p>
-			<label>LOCATION</label>
-			<p class="detail">Ralph’s Parking Lot on Nobel and Villa La Jolla Jr. (2.00 mi)</p>
-			<label>REWARD</label>
-			<p class="detail" style="margin-bottom: 0px;">$1000</p>
-			<hr>
-		</a>
-	</div>
+	<ul id = "pet-list"></ul>
+
+
 
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
@@ -82,14 +193,24 @@
 	</div>
 </body>
 
+<!-- Firebase -->
 <script>
-function multiplyNode(node, count, deep) {
-    for (var i = 0, copy; i < count - 1; i++) {
-        copy = node.cloneNode(deep);
-        node.parentNode.insertBefore(copy, node);
-    }
-}
-
-multiplyNode(document.querySelector('.column'), 4, true);
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+		authDomain: "trace-43d6f.firebaseapp.com",
+		databaseURL: "https://trace-43d6f.firebaseio.com",
+		projectId: "trace-43d6f",
+		storageBucket: "trace-43d6f.appspot.com",
+		messagingSenderId: "241015211966",
+		appId: "1:241015211966:web:d19af455bd83d38c"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	const db = firebase.firestore(); //database
+	db.settings({ timestampsInSnapshots: true });
 </script>
+<script src="pet.js"></script>
+
+
 </html>
