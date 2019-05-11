@@ -158,13 +158,13 @@ span.psw {
 
 <script type="text/javascript">
 
+  /*
   $(document).ready(() => {
     console.log("Hello World");
     const database = firebase.database();
     console.log("Hello World 2");
-  });
-
-  /*
+  });*/
+  
   $(document).ready(() => {
     console.log("hellloooooo");
     var formUrl = "";
@@ -177,17 +177,16 @@ span.psw {
       	url: loginUrl,
       	type: 'GET',
       	dataType: 'json',
-
       	
       	success: (data) => {
       		console.log("data we got: ", data);
       		if (data.password == $("#passwordId").val()){
-      			console.log("Correct password", $("#passwordId").val(), data.password);
+      			console.log("Correct login", $("#passwordId").val(), data.password);
       			formUrl = "map.html";
       			document.location.href = formUrl;
       			//self.location = mapUrl
       		} else {
-      			console.log("Invalid password", $("#passwordId").val(), data.password);
+      			console.log("Invalid login", $("#passwordId").val(), data.password);
       			formUrl = "index.html";
       			alert("Invalid password");
       			document.location.href = formUrl;
@@ -197,11 +196,11 @@ span.psw {
 
 		function getFormUrl() {
 			return formUrl;
-      	}
-      //console.log("after ajazx");
+    }
+      console.log("after ajazx");
     });
 
-  });*/
+  });
 
 </script>
 
