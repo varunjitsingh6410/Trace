@@ -26,6 +26,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript" src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <style>
 
@@ -47,7 +48,7 @@
 	<div class="header">
   <h1>ADD LOST PET</h1>
   <div class="header-right">
-    <a href="addLostPet.html" id="submitBtn"><img src="images/check.png" style="width:100%;"></a>
+    <a href="addLostPet.html"><img src="images/check.png" id="submitBtn" style="width:100%;"></a>
   </div>
 </div>
 
@@ -66,6 +67,36 @@
 		<input type="reward" id="petReward" placeholder="Reward" name="reward">
 		<input type="email" id="ownerEmail" placeholder="Contact email address" name="email" required>
 		<input type="phone" id="ownerNumber" placeholder="Contact phone number" name="phone" required>
+
+		<script type="text/javascript">
+
+			const database = firebase.database();
+
+			$(document).ready(() => {
+				console.log("Inside add pet");
+
+				$('#submitBtn').click(() => {
+					console.log("I was clicked");
+
+					const petName = $('#petName').val();
+					console.log(petName);
+					database.ref('pets/'+ petName).set({
+						breed: $('#petBreed').val(),
+						locationLastSeen: $('#locationLastSeen').val(),
+						dataLastSeen: $('#dateLastSeen').val(),
+						description: $('#description').val(),
+						reward: $('#reward').val(),
+						email: $('#ownerEmail').val(),
+						number: $('#ownerNumber').val()
+					});
+					console.log('After insertion');
+					alert("Hello! I am an alert box!!");
+				});
+			});
+
+		</script>
+
+
 	</div>
 
 <div class="footer">
@@ -75,42 +106,6 @@
 	<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 </div>
-
-
-<script type="text/javascript">
-
-	const database = firebase.database();
-
-	$(document).ready(() => {
-		console.log("Inside register");
-
-		$('#submitBtn').click(() => {
-			console.log("I was clicked");
-
-			if ($('#userPassword1').val() != $('#userPassword2').val()) {
-				alert("Passwords do not match");
-				location.reload();
-			}
-
-			const petName = $('#petName').val();
-			console.log(petName);
-			database.ref('pets/'+username).set({
-				breed: $('#petBreed').val(),
-				locationLastSeen: $('#locationLastSeen').val(),
-				dataLastSeen: $('#dateLastSeen').val(),
-				description: $('#description').val(),
-				reward: $('#reward').val(),
-				email: $('#ownerEmail').val(),
-				number: $('#ownerNumber').val()
-			});
-			console.log('After insertion');
-			alert("Hello! I am an alert box!!");
-		});
-
-
-	});
-
-</script>
 
 
 
