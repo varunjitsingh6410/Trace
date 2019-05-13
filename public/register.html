@@ -146,7 +146,7 @@ hr{
 <head>
 	<title>Login</title>
 </head>
-<body>
+<body> 
 	<form action="map.html">
 	  <div class="imgcontainer">
 	    <img src="images/paw logo2.png" alt="Avatar" class="avatar">
@@ -157,10 +157,14 @@ hr{
 				Make an account</p>
 			<hr>
 			<div class="fill">
-	    <input type="text" id="userFullName" placeholder="Full Name" name="fname" required>
-			<input type="email" id="userEmail" placeholder="Email Address" name="email" required>
-			<input type="user" id="userId" placeholder="User ID" name="uname" required>
-	    <input type="password" id="userPassword1" placeholder="Password" name="psw" required>
+	    		<input type="text" id="userFullName" placeholder="Full Name" name="fname" required>
+
+				<input type="email" id="userEmail" placeholder="Email Address" name="email" required>
+
+				<input type="user" id="userId" placeholder="User ID" name="uname" required>
+
+	    	<input type="password" id="userPassword1" placeholder="Password" name="psw" required>
+
 			<input type="password" id="userPassword2" placeholder="Verify Password" name="psw" required>
 	  </div>
 	    <button type="submit" id="signUpBtn">SIGN UP</button>
@@ -178,7 +182,20 @@ hr{
 				$('#signUpBtn').click(() => {
 					console.log("I was clicked");
 
+					if ($('#userPassword1').val() != $('#userPassword2').val()) {
+						alert("Passwords do not match");
+						location.reload();
+					}
 
+					const username = $('#userId').val();
+					console.log(username);
+					database.ref('users/'+username).set({
+						name: $('#userFullName').val(),
+						email: $('#userEmail').val(),
+						password: $('#userPassword1').val()
+					});
+					console.log('After insertion');
+					//alert("Hello! I am an alert box!!");
 				});
 
 
