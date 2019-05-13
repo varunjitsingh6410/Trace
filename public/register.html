@@ -1,5 +1,34 @@
 <!DOCTYPE html>
 <html>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+ <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+    authDomain: "trace-43d6f.firebaseapp.com",
+    databaseURL: "https://trace-43d6f.firebaseio.com",
+    projectId: "trace-43d6f",
+    storageBucket: "trace-43d6f.appspot.com",
+    messagingSenderId: "241015211966",
+    appId: "1:241015211966:web:d19af455bd83d38c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+<script type="text/javascript" src="app.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 <style>
@@ -128,17 +157,92 @@ hr{
 				Make an account</p>
 			<hr>
 			<div class="fill">
-	    <input type="text" placeholder="Full Name" name="fname" required>
-			<input type="email" placeholder="Email Address" name="email" required>
-			<input type="user" placeholder="User ID" name="uname" required>
-	    <input type="password" placeholder="Password" name="psw" required>
-			<input type="password" placeholder="Verify Password" name="psw" required>
-</div>
-	    <button type="submit">SIGN UP</button>
+	    <input type="text" id="userFullName" placeholder="Full Name" name="fname" required>
+			<input type="email" id="userEmail" placeholder="Email Address" name="email" required>
+			<input type="user" id="userId" placeholder="User ID" name="uname" required>
+	    <input type="password" id="userPassword1" placeholder="Password" name="psw" required>
+			<input type="password" id="userPassword2" placeholder="Verify Password" name="psw" required>
+	  </div>
+	    <button type="submit" id="signUpBtn">SIGN UP</button>
 				<br>
 				<span class="psw"><a href="index.html">cancel</a></span>
 	  </div>
 
+	  	<script type="text/javascript">
+
+	  		const database = firebase.database();
+
+			$(document).ready(() => {
+				console.log("Inside register");
+
+				$('#signUpBtn').click(() => {
+					console.log("I was clicked");
+
+
+				});
+
+
+			});
+
+		</script>
+
 	</form>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
