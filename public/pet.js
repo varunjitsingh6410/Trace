@@ -62,6 +62,10 @@ db.collection('petTest').get().then((snapshot) => {
 
 db.collection('pets').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
-      renderName(doc);
+      let name = doc.data().name;
+      let location = doc.data().location;
+      if (name && (location == "LOST")) {
+        renderName(doc);
+      }
   })
 });
