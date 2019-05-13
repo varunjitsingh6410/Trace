@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="app.js"></script>
 </head>
 <style>
 
@@ -46,7 +47,7 @@
 	<div class="header">
   <h1>ADD LOST PET</h1>
   <div class="header-right">
-    <a href="addLostPet.html"><img src="images/check.png" style="width:100%;"></a>
+    <a href="addLostPet.html" id="submitBtn"><img src="images/check.png" style="width:100%;"></a>
   </div>
 </div>
 
@@ -57,14 +58,14 @@
 
 	<div class="container">
 		<div class="fill">
-		<input type="text" placeholder="Name" name="name" required>
-		<input type="text" placeholder="Breed" name="name" required>
-		<input type="location" placeholder="Location last seen" name="location" required>
-		<input type="date" placeholder="Date last seen" name="date" required>
-		<input type="desc" placeholder="Description of physical traits and behavior" name="desc">
-		<input type="reward" placeholder="Reward" name="reward">
-		<input type="email" placeholder="Contact email address" name="email" required>
-		<input type="phone" placeholder="Contact phone number" name="phone" required>
+		<input type="text" id="petName" placeholder="Name" name="name" required>
+		<input type="text" id="petBreed" placeholder="Breed" name="name" required>
+		<input type="location" id="locationLastSeen" placeholder="Location last seen" name="location" required>
+		<input type="date" id="dateLastSeen" placeholder="Date last seen" name="date" required>
+		<input type="desc" id="petDescription" placeholder="Description of physical traits and behavior" name="desc">
+		<input type="reward" id="petReward" placeholder="Reward" name="reward">
+		<input type="email" id="ownerEmail" placeholder="Contact email address" name="email" required>
+		<input type="phone" id="ownerNumber" placeholder="Contact phone number" name="phone" required>
 	</div>
 
 <div class="footer">
@@ -76,7 +77,40 @@
 </div>
 
 
+<script type="text/javascript">
 
+	const database = firebase.database();
+
+	$(document).ready(() => {
+		console.log("Inside register");
+
+		$('#submitBtn').click(() => {
+			console.log("I was clicked");
+
+			if ($('#userPassword1').val() != $('#userPassword2').val()) {
+				alert("Passwords do not match");
+				location.reload();
+			}
+
+			const petName = $('#petName').val();
+			console.log(petName);
+			database.ref('pets/'+username).set({
+				breed: $('#petBreed').val(),
+				locationLastSeen: $('#locationLastSeen').val(),
+				dataLastSeen: $('#dateLastSeen').val(),
+				description: $('#description').val(),
+				reward: $('#reward').val(),
+				email: $('#ownerEmail').val(),
+				number: $('#ownerNumber').val()
+			});
+			console.log('After insertion');
+			alert("Hello! I am an alert box!!");
+		});
+
+
+	});
+
+</script>
 
 
 
