@@ -17,6 +17,7 @@ function renderName(doc) {
   var img = document.createElement("img");
 
 
+
   li.setAttribute('data-id', doc.id);
 
   name.textContent = doc.data().name.toUpperCase();
@@ -48,6 +49,8 @@ function renderName(doc) {
 
 
   petData.appendChild(li);
+
+
 
 }
 
