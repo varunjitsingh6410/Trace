@@ -40,4 +40,4 @@ contact information.
 
 ## Database
 
-For the login page, we are able to add new accounts to the database. For the pet's data, we retrieve the information from the database on firestore. For the map api we set markers using latitude and longitude coordinates stored in the database.
+We decided to use Firebase for our backend. For the login page, we are able to add new accounts to the database. For the pet's data, we retrieve the information from the database on firestore. For the map api we set markers using latitude and longitude coordinates stored in the database.
