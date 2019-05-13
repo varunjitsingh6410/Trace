@@ -4,7 +4,25 @@
 	<title>Map</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 
+ <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    
+<script>
+  //Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+    authDomain: "trace-43d6f.firebaseapp.com",
+    databaseURL: "https://trace-43d6f.firebaseio.com",
+    projectId: "trace-43d6f",
+    storageBucket: "trace-43d6f.appspot.com",
+    messagingSenderId: "241015211966",
+    appId: "1:241015211966:web:d19af455bd83d38c"
+  };
+  // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+</script>
 
 </head>
 <style>
@@ -109,7 +127,7 @@
     function initMap() {
 
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 32.715736, lng: -117.2713},
+          center: {lat: 47.6062, lng: -122.3321},
           zoom: 10,
           panControl: false,
           gestureHandling: 'greedy',
@@ -117,11 +135,11 @@
           disableDoubleClickZoom: true,
         });
 
-        var dbRef= firebase.database().ref('bins');
+        var dbRef= firebase.database().ref('/');
         dbRef.on('child_added', function(snapshot) {
             var snap = snapshot.val();
             var marker = new google.maps.Marker({
-              position: {lat: parseFloat(snap.lat), lng: parseFloat(snap.lng)},
+              position: {lat: parseFloat(snap.obfuscated_latitude), lng: parseFloat(snap.obfuscated_longitude)},
               map: map
             });
         });
@@ -145,33 +163,9 @@
     </script>
     
     
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
-    authDomain: "trace-43d6f.firebaseapp.com",
-    databaseURL: "https://trace-43d6f.firebaseio.com",
-    projectId: "trace-43d6f",
-    storageBucket: "trace-43d6f.appspot.com",
-    messagingSenderId: "241015211966",
-    appId: "1:241015211966:web:d19af455bd83d38c"
-  };
-  // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     
-  var database = firebase.database();
-</script>
+
+
 </body>
     
 
