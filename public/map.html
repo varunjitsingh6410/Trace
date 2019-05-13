@@ -4,6 +4,8 @@
 	<title>Map</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+
 </head>
 <style>
 	html, body {
@@ -76,8 +78,16 @@
 		top:425px;
 		left:150px;
 	}
-
-
+    
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
 </style>
 <body>
@@ -86,15 +96,39 @@
 		<img id="search" src="images/search2.png">
 		<button id="filterbutton" type="button"><img src="images/filter2.png"></button>
 	</div>
+    
+
+    
+    <!--The div element for the map -->
+    <div id="map"></div>
+ 
+        
+ <script>       
+         var map;
+
+    function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 32.715736, lng: -117.2713},
+          zoom: 10,
+          panControl: false,
+          gestureHandling: 'greedy',
+          disableDefaultUI: true,
+          disableDoubleClickZoom: true,
+        });
+
+        var dbRef= firebase.database().ref('bins');
+        dbRef.on('child_added', function(snapshot) {
+            var snap = snapshot.val();
+            var marker = new google.maps.Marker({
+              position: {lat: parseFloat(snap.lat), lng: parseFloat(snap.lng)},
+              map: map
+            });
+        });
+    }
+    </script>
 
 
-	<div class="background">
-		<img src="images/map.png" style="height:100%;">
-	</div>
-
-	<div class="pawprint">
-		<a href=pet.html><input type="image" src="images/pawcircle.png" style="height:30px;" /></a>
-	</div>
 	<div class="footer">
 		<a href="map.html"><img src="images/locationcolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
@@ -102,5 +136,45 @@
 		<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	</div>
+    
+    
+    
+    
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZ3MKiaqgpMUYxbGRldlKbmChRvaJHJo&callback=initMap">
+    </script>
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+    authDomain: "trace-43d6f.firebaseapp.com",
+    databaseURL: "https://trace-43d6f.firebaseio.com",
+    projectId: "trace-43d6f",
+    storageBucket: "trace-43d6f.appspot.com",
+    messagingSenderId: "241015211966",
+    appId: "1:241015211966:web:d19af455bd83d38c"
+  };
+  // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+  var database = firebase.database();
+</script>
 </body>
+    
+
+
+  
 </html>
