@@ -34,5 +34,10 @@ Yumi Minami
 
 ## UI Skeleton Improvement
 
-From the previous UI skeletons, we focused on improving the UI for the maps,
-list view, and pets page. For the maps page, we implemented the map API from Waze.
+From the previous UI skeletons, we focused on improving the UI for the maps, list view, and pets page. For the maps page, we implemented the map API from Waze that allows pins to be added to a moveable map. For the list page, we reformatted the html to cater to the data from
+firestore. On the pets page, we added more details about the pet's description such as breed, physical traits & behavior, reward, and
+contact information.
+
+## Database
+
+For the login page, we are able to add new accounts to the database. For the pet's data, we retrieve the information from the database on firestore.
