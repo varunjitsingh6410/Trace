@@ -55,4 +55,10 @@ db.collection('petTest').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       renderName(doc);
   })
-})
+});
+
+db.collection('pets').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+      renderName(doc);
+  })
+});
