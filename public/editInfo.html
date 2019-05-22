@@ -2,16 +2,19 @@
 <html>
 <head>
 	<title>List</title>
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 </head>
 <style>
 
-
-
-
+.body {
+	margin-left:10px;
+	width:96%;
+}
 
 </style>
 <body>
@@ -19,22 +22,30 @@
     <div class="header-left">
       <a href="profile.html"><img src="images/back.png" style="width:100%; float: left;"></a>
     </div>
-		<h1>EDIT ACCOUNT</h1>
+		<h1> EDIT ACCOUNT</h1>
 	</div>
-  <form action="profile.html">
+  <form id= "editinfo-form">
+
   <div class="container">
-    <div class="fill">
-    <input type="text" placeholder="Full Name" name="text" >
-    <input type="email" placeholder="Email Address" name="email" >
-    <input type="text" placeholder="User ID" name="text" >
-    <input type="text" placeholder="Phone Number" name="phone">
-    <input type="password" placeholder="Password" name="psw">
-    <input type="password" placeholder="Verify Password" name="psw">
+		<div class ="body"><p style= "text-align: left; padding-top: 0px; margin-top: 5px; font-size: 14px;margin-bottom: 6px;">
+		Verify Information</p><hr></div>
+		<input type="email" id="userEmail" placeholder="Verify Current Email">
+		<input type="password" id="userPassword" placeholder="Verify Current Password">
+		<br><br>
+		<div class ="body"><p style= "text-align: left; padding-top: 0px; margin-top: 5px; font-size: 14px;margin-bottom: 6px;">
+		Change email address</p><hr></div>
+		<input type="email" id="userNewEmail" placeholder="New Email Address">
+		<br>
+		<br>
+		<div class ="body"><p style= "text-align: left; padding-top: 0px; margin-top: 5px; font-size: 14px;margin-bottom: 6px;">
+		Change password</p><hr></div>
+    <input type="password" id="userNewPassword" placeholder="Password">
 		<br><br>
     <button id="yellowbutton" type="submit">SAVE EDITS</button>
-</div>
+	</div>
+
 </form>
-  </div>
+
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="list.html"><img src="images/listcolor.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
@@ -42,6 +53,34 @@
 		<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	</div>
+
+
+	  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+
+	  <script>
+	    // Initialize Firebase
+	    var firebaseConfig = {
+	      apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+	      authDomain: "trace-43d6f.firebaseapp.com",
+	      databaseURL: "https://trace-43d6f.firebaseio.com",
+	      projectId: "trace-43d6f",
+	      storageBucket: "trace-43d6f.appspot.com",
+	      messagingSenderId: "241015211966",
+	      appId: "1:241015211966:web:d19af455bd83d38c"
+	    };
+	    firebase.initializeApp(firebaseConfig);
+
+	    const auth = firebase.auth();
+	    const db = firebase.firestore();
+
+	    db.settings ({ timestampsInSnapshots: true });
+	  </script>
+
+	 <script src="autheditinfo.js"></script>
 </body>
+
 
 </html>

@@ -1,33 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
- <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
-    authDomain: "trace-43d6f.firebaseapp.com",
-    databaseURL: "https://trace-43d6f.firebaseio.com",
-    projectId: "trace-43d6f",
-    storageBucket: "trace-43d6f.appspot.com",
-    messagingSenderId: "241015211966",
-    appId: "1:241015211966:web:d19af455bd83d38c"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-
-
+<title>Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 
-<script type="text/javascript" src="app.js"></script>
-
-<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -66,6 +44,7 @@ a:hover,a:active{
 }
 /* Set a style for all buttons */
 button {
+  font-size:14px;
   background-color: #F3BD54;
   color: white;
   padding: 14px 20px;
@@ -78,10 +57,7 @@ button {
 	font-family: 'Open Sans', sans-serif;
 }
 
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
+
 
 /* Extra style for the cancel button (red)
 .cancelbtn {
@@ -95,7 +71,7 @@ button:hover {
   text-align: center;
   margin: 12px;
 }
-.avatar{
+.logo{
 	width:50%
 }
 
@@ -111,6 +87,16 @@ button:hover {
 	font-size: 12px;
 }
 
+input[type=text], input[type=password], input[type=vpassword], input[type=user], input[type=email]{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+	outline: 0;
+  display: inline-block;
+  border-width: 0 0 2px;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
 /* The "Forgot password" text
 span.psw {
   float: right;
@@ -128,84 +114,58 @@ span.psw {
   }
 }
 </style>
-<head>
-	<title>Login</title>
-</head>
+
 <body>
 
-	<form action= 'javascript:;' onsubmit="getFormUrl()">
 	  <div class="imgcontainer">
-	    <img src="images/paw logo2.png" alt="Avatar" class="avatar">
+	    <img src="images/paw logo2.png" class="logo">
 	  </div>
+
 
 	  <div class="container">
-	    <input type="text" id="userId" placeholder="User ID or Email Address" name="uname" required></input>
+      <form id="login-form">
 
-	    <input type="password" id="passwordId" placeholder="Password" name="psw" required></input>
+  	    <input type="email" id="userEmail" placeholder="Email Address"required></input>
 
-	    <button type="submit" id="loginBtn">LOGIN</button>
-				<br>
-				<div class="remember">
+  	    <input type="password" id="userPassword" placeholder="Password" required></input>
+  	    <button id="loginBtn">LOGIN</button>
+      </form>
+			<!--<div class="remember">
 	      <input type="checkbox" checked="checked" name="remember"> Remember me </input>
-			</div>
-				<br>
-				<br>
-			<span class="psw" style="font-size: 12px;">Forgot <a href="forgotpass.html">Password?</a></span>
+			</div>-->
+      <br>
+			<span class="psw" style="font-size: 12px;"> <a href="forgotpass.html"><u>Forgot Password?</u></a></span>
 			<br><br>
-     <span class="psw" style="font-size: 12px;">Don't have an account? <a href="register.html">Sign Up!</a></span>
+     <span class="psw" style="font-size: 12px;">Don't have an account? <a href="register.html"><u>Sign Up!</u></a></span>
 	  </div>
 
 
-<script type="text/javascript">
 
-  /*
-  $(document).ready(() => {
-    console.log("Hello World");
-    const database = firebase.database();
-    console.log("Hello World 2");
-  });*/
-  
-  $(document).ready(() => {
-    console.log("hellloooooo");
-    var formUrl = "";
-    $('#loginBtn').click(() => {
+      <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
 
-      let loginUrl = "users/"+ $("#userId").val();
-      console.log("The url is: " + loginUrl);
-      //firebaseDb.ref('users/').remove();
-      $.ajax({
-      	url: loginUrl,
-      	type: 'GET',
-      	dataType: 'json',
-      	
-      	success: (data) => {
-      		console.log("data we got: ", data);
-      		if (data.password == $("#passwordId").val()){
-      			console.log("Correct login", $("#passwordId").val(), data.password);
-      			formUrl = "map.html";
-      			document.location.href = formUrl;
-      			//self.location = mapUrl
-      		} else {
-      			console.log("Invalid login", $("#passwordId").val(), data.password);
-      			formUrl = "index.html";
-      			alert("Invalid password");
-      			document.location.href = formUrl;
-      		}
-      	}
-      });
+      <script>
+        // Initialize Firebase
+        var firebaseConfig = {
+          apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+          authDomain: "trace-43d6f.firebaseapp.com",
+          databaseURL: "https://trace-43d6f.firebaseio.com",
+          projectId: "trace-43d6f",
+          storageBucket: "trace-43d6f.appspot.com",
+          messagingSenderId: "241015211966",
+          appId: "1:241015211966:web:d19af455bd83d38c"
+        };
+        firebase.initializeApp(firebaseConfig);
 
-		function getFormUrl() {
-			return formUrl;
-    }
-      console.log("after ajazx");
-    });
+        const auth = firebase.auth();
+        const db = firebase.firestore();
 
-  });
+        db.settings ({ timestampsInSnapshots: true });
+      </script>
 
-</script>
+     <script src="authlogin.js"></script>
 
-
-
-	</form>
 </body>
 </html>

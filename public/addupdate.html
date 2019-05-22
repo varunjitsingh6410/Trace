@@ -2,12 +2,27 @@
 <html>
 <head>
 	<title>Add Update</title>
+
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
 
-
+button {
+  background-color: #F3BD54;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+	text-align: center;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
 </style>
 
 <body>
@@ -15,18 +30,22 @@
   <div class="header-left">
     <a href="pet.html"><img src="images/back.png" style="width:100%;"></a>
   </div>
-  <div class="header-right">
-    <a href="pet.html"><img src="images/check.png" style="width:100%;"></a>
-  </div>
+<!--	<div class="header-right">
+		<a href="pet.html"><img src="images/check.png" style="width:100%;"></a>
+	</div> -->
+
   <h1>ADD UPDATE</h1>
 
 </div>
 
 	<div class="container">
-		<div class="fill">
-		<input type="date" placeholder="Date" name="date" required>
-    <input type="location" placeholder="Location last seen" name="location" required>
-		<input type="desc" placeholder="Description of scenario" name="desc">
+		<form id="addupdate-form">
+		<input type="date" id="date" placeholder="Date" required>
+  <!--  <input type="location" placeholder="Location last seen" name="location" required>-->
+		<input type="desc" id ="desc" placeholder="Description of scenario" required>
+		<br><br>
+		<center><button id="updateBtn">ADD UPDATE</button></center>
+	</form>
 	</div>
 
 <div class="footer">
@@ -36,5 +55,24 @@
 	<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 </div>
+<!-- Firebase -->
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+    authDomain: "trace-43d6f.firebaseapp.com",
+    databaseURL: "https://trace-43d6f.firebaseio.com",
+    projectId: "trace-43d6f",
+    storageBucket: "trace-43d6f.appspot.com",
+    messagingSenderId: "241015211966",
+    appId: "1:241015211966:web:d19af455bd83d38c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+	const db = firebase.firestore(); //database
+	db.settings({ timestampsInSnapshots: true });
+</script>
+<script src="addupdate.js"></script>
+
 </body>
 </html>

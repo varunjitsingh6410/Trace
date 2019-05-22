@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 	<title>Profile</title>
 	<link rel="stylesheet" href="css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
@@ -32,39 +34,52 @@ hr {
 	width: 100%;
 }
 
+button {
+  background-color: #F3BD54;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+	text-align: center;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+
 </style>
 <body>
 	<div class="header">
 	<h1>MY ACCOUNT</h1>
 </div>
-	<h4>Personal Information</h4>
+
+	<h4>Account Information</h4>
 	<a href= "editInfo.html"><img src="images/edit.png" style="width:11%; float:right; padding:15px;"></a>
 	<hr>
-	<label>USER ID</label>
-	<p class="detail">Helloitsjohn</p>
-	<br>
 	<label>NAME</label>
-	<p class="detail">John Doe</p>
-	<br>
-	<label>PHONE NUMBER</label>
-	<p class="detail">(123)456-7890</p>
+	<p id="name" class="detail"></p>
 	<br>
 	<label>EMAIL</label>
-	<p class="detail">example@example.com</p>
-	<br>
-
-	<h4>My posts</h4>
+	<p id="email" class="detail"></p>
+	<br><br>
 	<hr>
+	<h4>My posts</h4>
+	<br>
+	<br><br>
 	<img src="images/shiba.png" style="width:30%; float: left; padding-left:15px;padding-right:10px;padding-bottom:10px;">
-	<label id="name"> GEORGE</label>
+	<label style="padding-left:0px;font-size:16px;" id="petname"> GEORGE</label>
 	<br>
-	<a href= "editPet.html"><img src="images/edit.png" style="width:11%; padding:5px;"></a>
+	<a href= "editPet.html"><img src="images/edit.png" style="width:11%; padding-left:8px;padding-bottom:5px;"></a>
 	<br>
-	<a href= "pet.html"><img src="images/alerts.png" style="width:38%; padding:5px;"></a>
-
+	<a href= "pet.html"><img src="images/alerts.png" style="width:38%; padding-left:8px;"></a>
+<!--
 	<hr>
 	<a href= "follows.html"><h4>Followed Posts</h4></a>
 	<hr>
+-->
+	<center><button id="logoutBtn">LOGOUT</button></center>
 
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
@@ -73,5 +88,33 @@ hr {
 		<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="profile.html"><img src="images/profilecolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	</div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var firebaseConfig = {
+      apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+      authDomain: "trace-43d6f.firebaseapp.com",
+      databaseURL: "https://trace-43d6f.firebaseio.com",
+      projectId: "trace-43d6f",
+      storageBucket: "trace-43d6f.appspot.com",
+      messagingSenderId: "241015211966",
+      appId: "1:241015211966:web:d19af455bd83d38c"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    db.settings ({ timestampsInSnapshots: true });
+  </script>
+
+ <script src="authprofile.js"></script>
+
 </body>
 </html>
