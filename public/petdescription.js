@@ -123,7 +123,8 @@ db.collection('petTest').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       // adjust later for different pets :-)
       let name = doc.data().name;
-      if (name == "George") {
+      import {imgID} from 'send.js';
+      if (name == imgID) {
           renderNamePet(doc);
           renderUpdate(doc);
           return;
