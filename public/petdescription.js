@@ -3,7 +3,7 @@ const petData = document.querySelector('#pet');
 const petUpdate = document.querySelector('#updates');
 
 // create element and render pet list
-function renderName(doc) {
+function renderNamePet(doc) {
   let li = document.createElement('li');
   let name = document.createElement('span');
 
@@ -124,7 +124,7 @@ db.collection('petTest').get().then((snapshot) => {
       // adjust later for different pets :-)
       let name = doc.data().name;
       if (name == "George") {
-          renderName(doc);
+          renderNamePet(doc);
           renderUpdate(doc);
       }
   })
