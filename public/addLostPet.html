@@ -1,31 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add Missing Pet</title>
-
- <!-- TODO: Add SDKs for Firebase products that you want to use
- https://firebase.google.com/docs/web/setup#config-web-app -->
- <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
-    authDomain: "trace-43d6f.firebaseapp.com",
-    databaseURL: "https://trace-43d6f.firebaseio.com",
-    projectId: "trace-43d6f",
-    storageBucket: "trace-43d6f.appspot.com",
-    messagingSenderId: "241015211966",
-    appId: "1:241015211966:web:d19af455bd83d38c"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript" src="app.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <style>
@@ -41,64 +21,52 @@
 	width:50%
 }
 
+button {
+  background-color: #F3BD54;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+	text-align: center;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
 
 </style>
 
 <body>
 	<div class="header">
   <h1>ADD LOST PET</h1>
-  <div class="header-right">
+  <!--<div class="header-right">
     <a href="addLostPet.html"><img src="images/check.png" id="submitBtn" style="width:100%;"></a>
-  </div>
-</div>
-
+  </div>-->
+	</div>
+<!--
 	<div class="imgcontainer">
 		<br>
 		<a href="#"><img src="images/addPhoto.png" class="addphoto"></a>
 	</div>
-
+-->
 	<div class="container">
-		<div class="fill">
-		<input type="text" id="petName" placeholder="Name" name="name" required>
-		<input type="text" id="petBreed" placeholder="Breed" name="name" required>
-		<input type="location" id="locationLastSeen" placeholder="Location last seen" name="location" required>
-		<input type="date" id="dateLastSeen" placeholder="Date last seen" name="date" required>
-		<input type="desc" id="petDescription" placeholder="Description of physical traits and behavior" name="desc">
-		<input type="reward" id="petReward" placeholder="Reward" name="reward">
-		<input type="email" id="ownerEmail" placeholder="Contact email address" name="email" required>
-		<input type="phone" id="ownerNumber" placeholder="Contact phone number" name="phone" required>
+		<form id = "addpet-form">
+			<input type="text" name="petName" placeholder="Name" required>
+			<input type="text" name="petPic" placeholder="URL of pet photo" required>
+			<input type="text" name="petBreed" placeholder="Breed"  required>
+			<input type="location" name="locationLastSeen" placeholder="Location last seen" required>
+			<input type="date" name="dateLastSeen" placeholder="Date last seen" required>
+			<input type="desc" name="petDescription" placeholder="Description of physical traits and behavior">
+			<input type="reward" name="petReward" placeholder="Reward" >
+			<input type="email" name="ownerEmail" placeholder="Contact email address" required>
+			<input type="phone" name="ownerNumber" placeholder="Contact phone number" required>
+			<br><br>
+			<center><button id="addBtn">ADD PET</button></center>
 
-		<script type="text/javascript">
-
-			const database = firebase.database();
-
-			$(document).ready(() => {
-				console.log("Inside add pet");
-
-				$('#submitBtn').click(() => {
-					console.log("I was clicked");
-
-					const petName = $('#petName').val();
-					console.log(petName);
-					database.ref('pets/'+ petName).set({
-						breed: $('#petBreed').val(),
-						locationLastSeen: $('#locationLastSeen').val(),
-						dataLastSeen: $('#dateLastSeen').val(),
-						description: $('#description').val(),
-						reward: $('#reward').val(),
-						email: $('#ownerEmail').val(),
-						number: $('#ownerNumber').val()
-					});
-					console.log('After insertion');
-					alert("Hello! I am an alert box!!");
-				});
-			});
-
-		</script>
-
+		</form>
 
 	</div>
-
 <div class="footer">
 	<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	<a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
@@ -108,51 +76,24 @@
 </div>
 
 
+<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+		authDomain: "trace-43d6f.firebaseapp.com",
+		databaseURL: "https://trace-43d6f.firebaseio.com",
+		projectId: "trace-43d6f",
+		storageBucket: "trace-43d6f.appspot.com",
+		messagingSenderId: "241015211966",
+		appId: "1:241015211966:web:d19af455bd83d38c"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	const db = firebase.firestore(); //database
+	db.settings({ timestampsInSnapshots: true });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</script>
+<script src="add.js"></script>
 
 </body>
 </html>
-
-
-
