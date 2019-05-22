@@ -4,6 +4,7 @@
 	<title>List</title>
 	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
@@ -21,6 +22,7 @@ background-color: #f6f6f6;
 border: 1px solid #ddd;
 z-index: 1;
 width: auto;
+min-width: 300px;
 overflow: auto;
 }
 /* Links inside the dropdown */
@@ -170,7 +172,7 @@ overflow: auto;
 		height:100%;
 	}
 
-	#search {
+	#searchbutton {
 		width:30px;
 		float:left;
 		padding-top:12px;
@@ -182,11 +184,24 @@ overflow: auto;
 		background-color: transparent;
 		float:right;
 	}
+	#searchbutton {
+		border: none;
+		background-color: transparent;
+		float:left;
+	}
 
 	#filterbutton img {
 		width:30px;
 		padding-top: 12px;
 		padding-right:10px
+
+	}
+	#searchbutton img {
+		width:30px;
+		padding-top: 12px;
+		padding-left: 5px;
+		padding-right: 12px;
+
 
 	}
 
@@ -195,8 +210,8 @@ overflow: auto;
 </style>
 <body>
 	<div id="searchbar" class="header">
-		<input type="text" placeholder="SEARCH...">
-		<img id="search" src="images/search2.png">
+		<input id ="searchBox" type="text" placeholder="SEARCH...">
+		<button id="searchbutton" type="button"><img id="search" src="images/search2.png"></button>
 		<div class=dropdown>
 	  	<button onclick="filter()" id="filterbutton" type="button"><img src="images/filter2.png"></button>
 				<div id="myDropdown" class="dropdown-content">
@@ -262,6 +277,7 @@ function filterFunction() {
 }
 </script>
 <script src="pet.js"></script>
+<script src="search.js"></script>
 
 
 </html>
