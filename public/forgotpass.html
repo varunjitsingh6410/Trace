@@ -2,6 +2,8 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 <style>
 
 body{
@@ -108,7 +110,7 @@ span.psw {
 hr{
 	border-width: 1px;
 	border-color: #F3BD54;
-	width:90%;
+	width:100%;
 	display: block;
 	border-style:solid;
 	margin-top: 0;
@@ -126,18 +128,17 @@ hr{
 	  </div>
 
 	  <div class="container">
-			<p class= "serif" style= "text-align: left; padding-top: 0px; padding-left:25px;margin-top: 5px; font-size: 18px;margin-bottom: 2px;">
+			<p class= "serif" style= "text-align: left; padding-top: 0px; margin-top: 5px; font-size: 18px;margin-bottom: 6px;">
 				Forgot Password</p>
 			<hr>
 			<div class="fill">
-	    <input type="text" placeholder="Full Name" name="fname" required>
-			<input type="email" placeholder="Email Address" name="email" required>
-			<input type="user" placeholder="User ID" name="uname" required>
-	    
+	    <input type="text" placeholder="Full Name"  required>
+			<input type="email" placeholder="Email Address"  required>
+
 </div>
 	    <button type="submit" onclick="window.location.href = 'index.html';">Send Reset Password Email</button>
 				<br>
-				<span class="psw"><a href="index.html">cancel</a></span>
+				<span class="psw" style="font-size: 12px;"><a href="index.html"><u>cancel</u></a></span>
 	  </div>
 
 	</form>

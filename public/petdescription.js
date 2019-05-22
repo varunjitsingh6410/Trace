@@ -1,5 +1,7 @@
 const petData = document.querySelector('#pet');
 
+const petUpdate = document.querySelector('#updates');
+
 // create element and render pet list
 function renderName(doc) {
   let li = document.createElement('li');
@@ -106,12 +108,24 @@ function renderName(doc) {
 
 }
 
+function renderUpdate(doc) {
+  let li = document.createElement('li');
+  let date = document.createElement('span');
+  let update = document.createElement('span');
+  date.textContent = doc.data().alertdate;
+  update.textContent = doc.data().alert;
+  li.appendChild(date);
+  li.appendChild(update);
+  petUpdate.appendChild(li);
+}
+
 db.collection('petTest').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       // adjust later for different pets :-)
       let name = doc.data().name;
       if (name == "George") {
           renderName(doc);
+          renderUpdate(doc);
       }
   })
 })
