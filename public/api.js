@@ -7144,13 +7144,21 @@ var pets =[
 
 pets.forEach(function(obj) {
     db.collection("pets").add({
+        type: obj.animal_type,
+        age: obj.Age,
+        gender: obj.Animal_Gender,
         breed: obj.breed,
         name: obj.name,
         description: obj.Description,
         lat: obj.obfuscated_latitude,
         long: obj.obfuscated_longitude,
-        location: obj.location,
-        picture: obj.picture
+        location: obj.Obfuscated_Address+ ", " +  obj.City.toString() + ", " + obj.State.toString() + " "+ obj.Zip.toString(),
+        city: obj.City,
+        zip: obj.Zip,
+        picture: obj.picture,
+        status: obj.location,
+        state: obj.State,
+        date: obj.Date
     }).then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
     })
