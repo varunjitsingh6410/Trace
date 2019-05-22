@@ -126,6 +126,7 @@ db.collection('petTest').get().then((snapshot) => {
       if (name == "George") {
           renderName(doc);
           renderUpdate(doc);
+          return;
       }
   })
 })

@@ -9,8 +9,14 @@ addUpdate.addEventListener('submit', (e) => {
   var pet = db.collection("petTest").doc("m5OOeiCT2wRBSWgZhvVg");
 
   return pet.update({
-    alertdate: date,
+    alertdate:date,
     alert: description
+/*
+    alerts: [
+      { alertdate:date },
+      { alert: description }
+    ]
+*/
   })
   .then(function() {
       console.log("Document successfully updated!");
