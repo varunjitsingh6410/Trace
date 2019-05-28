@@ -13,8 +13,8 @@ form.addEventListener('submit', (e) => {
     reward: form.petReward.value,
     email: form.ownerEmail.value,
     phone: form.ownerNumber.value,
-    lat: form.mapLocation.value,
-    long: form.mapLocation2.value,
+    lat: number = Number(form.mapLocation.value),
+    long: number = Number(form.mapLocation2.value)
   })
   form.reset();
   alert("Pet successfully added.");
