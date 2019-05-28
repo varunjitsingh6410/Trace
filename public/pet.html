@@ -283,6 +283,15 @@
 
 	}
 
+	#map {
+	  	position:absolute;
+			z-index:1;
+			top:505px;
+			left:57%;
+			height: 108px;  /* The height is 400 pixels */
+			width: 43%;  /* The width is the width of the web page */
+		 }
+
 
 
 </style>
@@ -293,8 +302,9 @@
   </div>
 </div>
 
-<ul id ="pet"></ul>
+<div id="map"></div>
 
+<ul id ="pet"></ul>
 <ul id ="updates"></ul>
 <a href="addupdate.html"><button> ADD UPDATE </button></a>
 
@@ -308,6 +318,8 @@
 	<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 </div>
+
+
 
 <!-- Firebase -->
 <script>
@@ -326,6 +338,12 @@
 	const db = firebase.firestore(); //database
 	db.settings({ timestampsInSnapshots: true });
 </script>
+
+
+
+ <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZ3MKiaqgpMUYxbGRldlKbmChRvaJHJo&callback=initMap">
+ </script>
 <script src="send.js"></script>
 <script src="petdescription.js"></script>
 
