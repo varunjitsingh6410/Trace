@@ -4,24 +4,26 @@
 	<title>Map</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-  
-<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+
     
 <script>
-  //Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
-    authDomain: "trace-43d6f.firebaseapp.com",
-    databaseURL: "https://trace-43d6f.firebaseio.com",
-    projectId: "trace-43d6f",
-    storageBucket: "trace-43d6f.appspot.com",
-    messagingSenderId: "241015211966",
-    appId: "1:241015211966:web:d19af455bd83d38c"
-  };
-  // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+		authDomain: "trace-43d6f.firebaseapp.com",
+		databaseURL: "https://trace-43d6f.firebaseio.com",
+		projectId: "trace-43d6f",
+		storageBucket: "trace-43d6f.appspot.com",
+		messagingSenderId: "241015211966",
+		appId: "1:241015211966:web:d19af455bd83d38c"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	var db = firebase.firestore(); //database
+	db.settings({ timestampsInSnapshots: true });
+
 </script>
 
 </head>
@@ -134,15 +136,35 @@
           disableDefaultUI: true,
           disableDoubleClickZoom: true,
         });
+        
+    
 
-        var dbRef= firebase.database().ref('/');
-        dbRef.on('child_added', function(snapshot) {
-            var snap = snapshot.val();
-            var marker = new google.maps.Marker({
-              position: {lat: parseFloat(snap.obfuscated_latitude), lng: parseFloat(snap.obfuscated_longitude)},
-              map: map
-            });
+
+        db =firebase.firestore();
+          // if (navigator.geolocation)
+        db.collection("pets")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            
+     const lat = doc.data().lat;
+     const lng = doc.data().long;
+
+    
+     const position = new google.maps.LatLng(lat, lng);
+     const marker = new google.maps.Marker({
+        position,
+        map: map
+        
+       });
         });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });    
+    
+    
     }
     </script>
 
