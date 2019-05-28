@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+</head>
+<style>
+	html, body {
+	  overflow:hidden;
+	}
+
+
+	#searchbar {
+	  background-color: #F3BD54;
+	}
+
+	input[type=text]{
+	  background-color: #F3BD54;
+	  width:65%;
+	  outline: 0;
+	  height: 25px;
+	  display: inline-block;
+	  font-family: 'Open sans', sans-serif;
+	  font-size: 20px;
+		padding-top:15px;
+		letter-spacing:.5px;
+		font-weight: 500;
+	}
+
+	input[type="text"]::placeholder {
+    color: white;
+		opacity: 0.7;
+		font-family: 'Open sans', sans-serif;
+	  font-size: 20px;
+		letter-spacing:.5px;
+		font-weight: 500;
+	}
+
+
+	input {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+	}
+
+
+	#search {
+		width:30px;
+		float:left;
+		padding-top:12px;
+		padding-left:10px
+	}
+
+	#filterbutton {
+		border: none;
+		background-color: transparent;
+		float:right;
+	}
+
+	#filterbutton img {
+		width:30px;
+		padding-top: 12px;
+		padding-right:10px
+
+	}
+
+	.background {
+		z-index:-1;
+	}
+
+	.pawprint {
+		position: absolute;
+		top:425px;
+		left:150px;
+	}
+    
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+</style>
+<body>
+	<div id="searchbar" class="header">
+		<input type="text" placeholder="SEARCH">
+		<img id="search" src="images/search2.png">
+		<button id="filterbutton" type="button"><img src="images/filter2.png"></button>
+	</div>
+    
+
+    
+    <!--The div element for the map -->
+    <div id="map"></div>
+ 
+        
+ <script>       
+    var map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 47.6062, lng: -122.3321},
+          zoom: 10,
+          panControl: false,
+          gestureHandling: 'greedy',
+          disableDefaultUI: true,
+          disableDoubleClickZoom: true,
+        });
+
+        let marker = new google.maps.Marker({
+		    position:map.center,
+		    url: 'list.html',
+		    animation:google.maps.Animation.DROP
+		});
+		marker.setMap(map)
+		google.maps.event.addListener(marker, 'click', function() {window.location.href = marker.url;});
+    }
+    </script>
+
+
+	<div class="footer">
+		<a href="map.html"><img src="images/locationcolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+		<a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
+		<a href="addLostPet.html"><img src="images/add.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+		<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	</div>
+    
+    
+    
+    
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZ3MKiaqgpMUYxbGRldlKbmChRvaJHJo&callback=initMap">
+    </script>
+    
+    
+    
+
+
+</body>
+    
+
+
+  
+</html>

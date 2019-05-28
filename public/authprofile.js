@@ -5,14 +5,17 @@ db.collection('pets').get().then(snapshot => {
 
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log(user);
-    const name = document.querySelector('#name');
-    name.textContent = user.displayName;
+    db.collection('users').doc(user.uid).get().then(doc => {
+      const name = document.querySelector('#name');
+      name.textContent = doc.data().name;
+    })
+
     const email = document.querySelector('#email');
     email.textContent = user.email;
-
   }
 });
+
+
 
 
 

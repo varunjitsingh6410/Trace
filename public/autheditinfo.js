@@ -17,7 +17,9 @@ editForm.addEventListener('submit', (e) => {
       .signInWithEmailAndPassword(email, password)
       .then(function(userCredential) {
           userCredential.user.updateEmail(newEmail);
-          window.location.href = 'profile.html';
+          window.location.href = 'index.html';
+          alert("Email successfully changed. Please sign in with new account information.");
+
       })
   }
 
@@ -27,6 +29,7 @@ editForm.addEventListener('submit', (e) => {
       .then(function(userCredential) {
           userCredential.user.updatePassword(newPassword);
           window.location.href = 'index.html';
+          alert("Password successfully changed. Please sign in with new account information.");
 
       })
   }
