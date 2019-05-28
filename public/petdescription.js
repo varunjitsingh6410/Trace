@@ -103,9 +103,6 @@ function renderNamePet(doc) {
 
 
   petData.appendChild(li);
-
-
-
 }
 
 function renderUpdate(doc) {
@@ -119,14 +116,24 @@ function renderUpdate(doc) {
   petUpdate.appendChild(li);
 }
 
+// Initialize and add the map
+function initMap(doc) {
+ var pet = {lat: doc.data().lat, lng: doc.data().long};
+ // The map, centered at Uluru
+ var map = new google.maps.Map(
+		 document.getElementById('map'), {zoom: 13, center: pet});
+ // The marker, positioned at Uluru
+ var marker = new google.maps.Marker({position: pet, map: map});
+}
+
 db.collection('petTest').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       // adjust later for different pets :-)
       let name = doc.data().name;
-      import {imgID} from 'send.js';
       if (name == imgID) {
           renderNamePet(doc);
           renderUpdate(doc);
+          initMap(doc);
           return;
       }
   })
