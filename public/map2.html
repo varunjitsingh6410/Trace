@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
 </head>
 <style>
 	html, body {
@@ -115,8 +117,13 @@
           disableDoubleClickZoom: true,
         });
 
-        let marker = new google.maps.Marker({ position: map.center })
-marker.setMap(map)
+        let marker = new google.maps.Marker({
+		    position:map.center,
+		    url: 'list.html',
+		    animation:google.maps.Animation.DROP
+		});
+		marker.setMap(map)
+		google.maps.event.addListener(marker, 'click', function() {window.location.href = marker.url;});
     }
     </script>
 
