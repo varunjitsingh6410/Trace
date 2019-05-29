@@ -73,13 +73,13 @@ One potential improvement we would like to implement is the search feature on th
 
 ## Data Pictures
 #### Add
-![](data1.PNG)
+![](data1.png)
 #### List
-![](data2.PNG)
+![](data2.png)
 #### Map
-![](data3.PNG)
+![](data3.png)
 #### description
-![](data4.PNG)
+![](data4.png)
 
 After adding pet, the list, map, and description pulls from firestore the newly
 added info.
