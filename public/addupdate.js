@@ -7,7 +7,7 @@ addUpdate.addEventListener('submit', (e) => {
   const date = addUpdate['date'].value;
   const description = addUpdate['desc'].value;
 
-  var pet = db.collection("petTest").doc(queryString3);
+  var pet = db.collection("pets").doc(queryString3);
   pet.get();
   if (pet.exists){
   return pet.update({
