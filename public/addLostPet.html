@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -324,6 +326,8 @@ window.onclick = function(event) {
 	};
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
+	const auth = firebase.auth();
+
 	const db = firebase.firestore(); //database
 	db.settings({ timestampsInSnapshots: true });
 

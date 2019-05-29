@@ -8,6 +8,13 @@ auth.onAuthStateChanged(user => {
     db.collection('users').doc(user.uid).get().then(doc => {
       const name = document.querySelector('#name');
       name.textContent = doc.data().name;
+
+      const pet = document.querySelector('#petname');
+      pet.textContent = doc.data().pet;
+
+      const petPic = document.querySelector('#petpic');
+      petPic.src = doc.data().picture;
+
     })
 
     const email = document.querySelector('#email');
