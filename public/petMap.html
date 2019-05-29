@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pet</title>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<style>
+
+	html, body {
+		overflow-x: hidden;
+		overflow-y: scroll;
+		height:1250px;
+
+	}
+
+  button {
+		position: absolute;
+		left: 15px;
+		top:1100px;
+    background-color: #F3BD54;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    letter-spacing:1px;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		font-size:16px;
+	}
+
+	li {
+		background: white;
+		font-family: 'Roboto', sans-serif;
+		font-size:12px;
+		color: #555;
+		font-weight:600;
+		position: relative;
+		height:910px;
+	}
+
+	li span{
+		display: block;
+	}
+
+
+	li span:nth-child(2){
+		position: relative;
+		color: Black;
+		text-align: center;
+		padding: 3px;
+		font-family: 'Open Sans', sans-serif;
+		margin: 0;
+		font-size:24px;
+		font-weight:600;
+		letter-spacing:1px;
+	}
+
+	li span:nth-child(3){
+	background-color: #F3BD54;
+	color: #FFFF;
+	text-align: center;
+	padding: 3px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	font-size:12px;
+	font-weight:580;
+	letter-spacing:1px;
+	}
+
+	/*date*/
+	li span:nth-child(4){
+		position: relative;
+		top:30px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+	}
+
+	li span:nth-child(5){
+		position:relative;
+		top:17px;
+		left: 60px;
+	}
+
+	/*location*/
+	li span:nth-child(6){
+		position: relative;
+		top:50px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+	}
+
+	li span:nth-child(7){
+		position:relative;
+		top:36px;
+		left: 90px;
+		width: 150px;
+	}
+
+
+	li span:nth-child(8){
+		position: relative;
+		top:55px;
+		background-color: #F3BD54;
+		color: #FFFF;
+		text-align: center;
+		padding: 3px;
+		font-family: 'Open Sans', sans-serif;
+		margin: 0px;
+		font-size:12px;
+		font-weight:580;
+		letter-spacing:1px;
+	}
+
+
+
+	/*Breed*/
+	li span:nth-child(9){
+		position: relative;
+		top:90px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+	}
+
+
+	li span:nth-child(10){
+		position:relative;
+		top:77px;
+		left: 70px;
+	}
+
+	/*Description*/
+	li span:nth-child(11){
+		position: relative;
+		top:110px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+	}
+
+
+	li span:nth-child(12){
+		position:relative;
+		top:120px;
+		left:20px;
+		width:90%;
+	}
+
+	/*Reward*/
+	li span:nth-child(13){
+		position: relative;
+		top:140px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+	}
+
+
+	li span:nth-child(14){
+		position:relative;
+		top:126px;
+		left:80px;
+	}
+
+	/*Contact*/
+	li span:nth-child(15){
+		position: relative;
+		top:155px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+	}
+
+
+	li span:nth-child(16){
+		position:relative;
+		top:165px;
+		left:20px;
+	}
+
+	li span:nth-child(17){
+		position:relative;
+		top:175px;
+		left:20px;
+	}
+
+	li span:nth-child(18){
+		position:relative;
+		top:220px;
+		background-color: #F3BD54;
+		color: #FFFF;
+		text-align: center;
+		padding: 3px;
+		font-family: 'Open Sans', sans-serif;
+		margin: 0px;
+		font-size:12px;
+		font-weight:580;
+		letter-spacing:1px;
+	}
+
+
+
+	li img {
+		top: 0px;
+		left: 0px;
+		width:100%;
+		height:275px;
+		margin:0;
+	}
+
+	#updates li {
+		background: white;
+		font-family: 'Roboto', sans-serif;
+		font-size:12px;
+		color: #555;
+		font-weight:600;
+		position: relative;
+		height:200px;
+	}
+	#updates li span:nth-child(odd) {
+		position: relative;
+		padding:0px;
+		margin:0;
+		padding-top:10px;
+		left:20px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 11px;
+		font-weight:600;
+		letter-spacing:1px;
+		color: #F3BD54;
+
+	}
+
+	#updates li span:nth-child(even) {
+		position:absolute;
+		top:6px;
+		left:100px;
+		font-size:12px;
+		padding:0px;
+		font-weight:600;
+		letter-spacing:0px;
+		color: #555;
+
+	}
+
+	#map {
+	  	position:absolute;
+			z-index:1;
+			top:406px;
+			left:57%;
+			height: 108px;  /* The height is 400 pixels */
+			width: 43%;  /* The width is the width of the web page */
+		 }
+
+
+
+</style>
+<body>
+  <div class="header">
+  <div class="header-left">
+    <a href="map.html"><img src="images/back.png" style="width:100%;"></a>
+  </div>
+</div>
+
+<div id="map"></div>
+<ul id ="pet"></ul>
+<ul id ="updates"></ul>
+<a href="addupdate.html"><button> ADD UPDATE </button></a>
+
+
+
+
+<div class="footer">
+	<a href="map.html"><img src="images/locationcolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
+	<a href="addLostPet.html"><img src="images/add.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<a href="notification.html"><img src="images/bell.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+	<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
+</div>
+
+
+
+<!-- Firebase -->
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+    authDomain: "trace-43d6f.firebaseapp.com",
+    databaseURL: "https://trace-43d6f.firebaseio.com",
+    projectId: "trace-43d6f",
+    storageBucket: "trace-43d6f.appspot.com",
+    messagingSenderId: "241015211966",
+    appId: "1:241015211966:web:d19af455bd83d38c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+	const db = firebase.firestore(); //database
+	db.settings({ timestampsInSnapshots: true });
+</script>
+
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZ3MKiaqgpMUYxbGRldlKbmChRvaJHJo&callback=initMap">
+</script>
+
+
+<script src="send2.js"></script>
+<script src="descriptionMap.js"></script>
+
+</body>
+</html>

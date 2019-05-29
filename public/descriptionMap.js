@@ -2,6 +2,10 @@ const petData = document.querySelector('#pet');
 
 const petUpdate = document.querySelector('#updates');
 
+let queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(7);
+console.log(queryString);
+
 // create element and render pet list
 function renderNamePet(doc) {
   let li = document.createElement('li');
@@ -116,17 +120,17 @@ function renderUpdate(doc) {
   petUpdate.appendChild(li);
 }
 //render pet
-let docRef = db.collection("pets").doc(imgID);
+let docRef = db.collection("pets").doc(queryString);
 docRef.get().then(function(doc) {
   if (doc.exists) {
-  renderName(doc)
+  renderNamePet(doc)
   }
 });
 //render petTest
-let docRef2 = db.collection("pets").doc(imgID);
+let docRef2 = db.collection("pets").doc(queryString);
 docRef2.get().then(function(docs) {
   if (docs.exists) {
-  renderName(docs)
+  renderNamePet(docs)
   }
 });
 

@@ -1,4 +1,7 @@
 let imgID;
-$('document').ready(function getID(img){
-    imgID = JSON.stringify(img);
-});
+
+function getID(img){
+    imgID = img.id;
+    imgID = JSON.stringify(imgID);
+    console.log(imgID);
+}

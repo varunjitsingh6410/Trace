@@ -1,6 +1,8 @@
+
 const petData = document.querySelector('#pet-list');
 let arr = [];
 let petMap = new Map();
+let resultPet = new Map();
 // create element and render pet list
 function renderName(doc) {
 if (doc.exists) {
@@ -25,7 +27,7 @@ if (doc.exists) {
   link.setAttribute('id', doc.id);
   link.setAttribute('class', 'set');
   link.setAttribute('href', 'pet.html');
-  link.setAttribute('onclick', 'getID(this.id)');
+  link.setAttribute('onclick', 'getID(this)');
 
   name.textContent = doc.data().name.toUpperCase();
   petMap.set(doc.data().name, doc.id);
@@ -80,10 +82,14 @@ db.collection('pets').get().then((snapshot) => {
 
 function updateResult(query) {
     let resultList = document.querySelector('#pet-list');
-    $('ul').empty()
+    $('ul').empty();
+    resultList.innerHTML == "";
+    resultPet.clear();
     arr.map(function(algo){
         query.split(" ").map(function (word){
             if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
+              if(!(resultPet.has(algo))){
+              resultPet.set(algo, "");
               petID = petMap.get(algo);
               let docRef = db.collection("pets").doc(petID);
               let docRef2 = db.collection("petTest").doc(petID);
@@ -94,6 +100,7 @@ function updateResult(query) {
                 renderName(docs);
               })
             }
+          }
         })
     })
 }
