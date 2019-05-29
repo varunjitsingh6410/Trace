@@ -127,7 +127,7 @@ docRef.get().then(function(doc) {
   }
 });
 //render petTest
-let docRef2 = db.collection("pets").doc(queryString);
+let docRef2 = db.collection("petTest").doc(queryString);
 docRef2.get().then(function(docs) {
   if (docs.exists) {
   renderNamePet(docs)
