@@ -42,7 +42,7 @@ addUpdate.addEventListener('submit', (e) => {
     })
     .then(function() {
         console.log("Document successfully updated!");
-        window.location.href = 'pet.html?para1='+queryString3;
+        window.location.href = 'petMap.html?para1='+queryString3;
     })
     .catch(function(error) {
         // The document probably doesn't exist.

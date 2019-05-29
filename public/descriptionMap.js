@@ -123,6 +123,7 @@ let docRef = db.collection("pets").doc(queryString);
 docRef.get().then(function(doc) {
   if (doc.exists) {
   renderNamePet(doc)
+  renderUpdate(doc)
   }
 });
 //render petTest
@@ -130,6 +131,7 @@ let docRef2 = db.collection("petTest").doc(queryString);
 docRef2.get().then(function(docs) {
   if (docs.exists) {
   renderNamePet(docs)
+  renderUpdate(docs)
   }
 });
 $('#updateButtonM').click(function(){
