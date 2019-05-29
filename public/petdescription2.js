@@ -129,17 +129,56 @@ function initMap(doc) {
  var marker = new google.maps.Marker({position: position, map: map});
 }
 
+// add update
+
+const addUpdate = document.querySelector('#addupdate-form');
+
+
 db.collection('pets').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       // adjust later for different pets :-)
       let name = doc.data().name;
       var userUid = auth.currentUser.uid;
+
       db.collection('users').doc(userUid).get().then(doc2 => {
         // imgID
         if (name == doc2.data().pet) {
+            console.log(doc.id);
+
             renderNamePet(doc);
             renderUpdate(doc);
             initMap(doc);
+
+
+            addUpdate.addEventListener('submit', (e) => {
+              e.preventDefault();
+
+              const date = addUpdate['date'].value;
+              const description = addUpdate['desc'].value;
+
+              var pet = db.collection("pets").doc(doc.id);
+
+              return pet.update({
+                alertdate:date,
+                alert: description
+            /*
+                alerts: [
+                  { alertdate:date },
+                  { alert: description }
+                ]
+            */
+              })
+              .then(function() {
+                  console.log("Document successfully updated!");
+                  window.location.href = 'pet2.html';
+              })
+              .catch(function(error) {
+                  // The document probably doesn't exist.
+                  console.error("Error updating document: ", error);
+              });
+
+            })
+
             return;
         }
       })

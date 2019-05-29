@@ -151,13 +151,35 @@
      const lat = doc.data().lat;
      const lng = doc.data().long;
 
+     console.log(doc.data().name);
+     console.log(doc.data().description);
+
     
      const position = new google.maps.LatLng(lat, lng);
+
+	  var infowindow = new google.maps.InfoWindow({
+	    content: doc.data().name
+	  });
+
      const marker = new google.maps.Marker({
         position,
         map: map
         
        });
+
+       /*marker.addListener('click', function() {
+	    infowindow.open(map, marker);
+	  });*/
+
+	  marker.addListener('mouseover', function() {
+	    infowindow.open(map, this);
+	});
+
+	// assuming you also want to hide the infowindow when user mouses-out
+	marker.addListener('mouseout', function() {
+	    infowindow.close();
+	});
+
         });
     })
     .catch(function(error) {
