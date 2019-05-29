@@ -16,14 +16,14 @@
 	html, body {
 		overflow-x: hidden;
 		overflow-y: scroll;
-		height:1250px;
+		height:1320px;
 
 	}
 
   button {
 		position: absolute;
 		left: 15px;
-		top:1100px;
+		top:1160px;
     background-color: #F3BD54;
     color: white;
     padding: 14px 20px;
@@ -258,7 +258,7 @@
 		color: #555;
 		font-weight:600;
 		position: relative;
-		height:200px;
+		height:20px;
 	}
 	#updates li span:nth-child(odd) {
 		position: relative;
@@ -306,14 +306,25 @@
 <body>
   <div class="header">
   <div class="header-left">
-    <a href="map.html"><img src="images/back.png" style="width:100%;"></a>
+    <a href="profile.html"><img src="images/back.png" style="width:100%;"></a>
   </div>
 </div>
 
 <div class="container-parent"><div id="map"></div></div>
 <ul id ="pet"></ul>
 <ul id ="updates"></ul>
-<a href="addupdate.html"><button> ADD UPDATE </button></a>
+
+<div class="container">
+	<form id="addupdate-form">
+	<input type="date" id="date" placeholder="Date" required>
+<!--  <input type="location" placeholder="Location last seen" name="location" required>-->
+	<input type="desc" id ="desc" placeholder="Description of scenario" required>
+	<br><br>
+	<center><button id="updateBtn">ADD UPDATE</button></center>
+</form>
+</div>
+
+<!--<a href="addupdate.html"><button> ADD UPDATE </button></a>-->
 
 
 
