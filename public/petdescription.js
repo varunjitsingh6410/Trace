@@ -123,6 +123,7 @@ docRef.get().then(function(doc) {
   if (doc.exists) {
   renderNamePet(doc)
   renderUpdate(doc)
+  initMap(doc)
   }
 });
 //render petTest
@@ -131,6 +132,7 @@ docRef2.get().then(function(docs) {
   if (docs.exists) {
   renderNamePet(docs)
   renderUpdate(docs)
+  initMap(docs)
   }
 });
 
