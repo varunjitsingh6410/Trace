@@ -56,6 +56,9 @@ The notication page simply shows alerts and the profile page shows the user's in
 ## Potential Improvements
 ...
 
+## Data Pictures
+...
+
 ## How we implemented
 We implemented front end UI/UX features using HTML, CSS, and JavaScript. The back end was implemented using Firebase's Firestore database. Firestore was implemented to store all of the data of the users and pets. We also used the Google Maps API to display the map with the markers on the maps page. The API was also used in the add pets page to set the pet's location. 
 
