@@ -122,7 +122,7 @@ let docRef = db.collection("pets").doc(queryString2);
 docRef.get().then(function(doc) {
   if (doc.exists) {
   renderNamePet(doc)
-  rednerUpdate(doc)
+  renderUpdate(doc)
   }
 });
 //render petTest
