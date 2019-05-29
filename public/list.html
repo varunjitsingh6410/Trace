@@ -5,7 +5,7 @@
 	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -210,7 +210,7 @@ overflow: auto;
 </style>
 <body>
 	<div id="searchbar" class="header">
-		<input id ="searchBox" type="text" placeholder="SEARCH...">
+		<input oninput="updateResult(this.value)" id ="searchBox" type="text" placeholder="SEARCH...">
 		<button id="searchbutton" type="button"><img id="search" src="images/search2.png"></button>
 		<div class=dropdown>
 	  	<button onclick="filter()" id="filterbutton" type="button"><img src="images/filter2.png"></button>

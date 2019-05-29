@@ -115,7 +115,20 @@ function renderUpdate(doc) {
   li.appendChild(update);
   petUpdate.appendChild(li);
 }
-
+//render pet
+let docRef = db.collection("pets").doc(imgID);
+docRef.get().then(function(doc) {
+  if (doc.exists) {
+  renderName(doc)
+  }
+});
+//render petTest
+let docRef2 = db.collection("pets").doc(imgID);
+docRef2.get().then(function(docs) {
+  if (docs.exists) {
+  renderName(docs)
+  }
+});
 // Initialize and add the map
 function initMap(doc) {
  const lat = doc.data().lat;
@@ -128,17 +141,3 @@ function initMap(doc) {
  // The marker, positioned at Uluru
  var marker = new google.maps.Marker({position: position, map: map});
 }
-
-db.collection('pets').get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-      // adjust later for different pets :-)
-      let name = doc.data().name;
-      // imgID
-      if (name == imgID) {
-          renderNamePet(doc);
-          renderUpdate(doc);
-          initMap(doc);
-          return;
-      }
-  })
-})

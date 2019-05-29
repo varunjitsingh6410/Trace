@@ -1,7 +1,9 @@
 const petData = document.querySelector('#pet-list');
-
+let arr = [];
+let petMap = new Map();
 // create element and render pet list
 function renderName(doc) {
+if (doc.exists) {
   let li = document.createElement('li');
   let link = document.createElement('a');
   let name = document.createElement('span');
@@ -18,14 +20,16 @@ function renderName(doc) {
   var img = document.createElement("img");
 
 
-
   li.setAttribute('data-id', doc.id);
 
-  link.setAttribute('class', 'petPage');
-  link.setAttribute('id', doc.data().picture);
+  link.setAttribute('id', doc.id);
+  link.setAttribute('class', 'set');
   link.setAttribute('href', 'pet.html');
+  link.setAttribute('onclick', 'getID(this.id)');
 
   name.textContent = doc.data().name.toUpperCase();
+  petMap.set(doc.data().name, doc.id);
+  arr.push(doc.data().name);
 
   dateLabel.textContent = "DATE";
   date.textContent = doc.data().date;
@@ -56,6 +60,7 @@ function renderName(doc) {
 
   petData.appendChild(li);
 }
+}
 
 db.collection('petTest').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
@@ -73,12 +78,22 @@ db.collection('pets').get().then((snapshot) => {
   })
 });
 
-$('document').ready(function(){
-  $('.petPage').click(() => {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open("POST", "pInfo.php");
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send(this.id);
-  })
-});
+function updateResult(query) {
+    let resultList = document.querySelector('#pet-list');
+    $('ul').empty()
+    arr.map(function(algo){
+        query.split(" ").map(function (word){
+            if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1){
+              petID = petMap.get(algo);
+              let docRef = db.collection("pets").doc(petID);
+              let docRef2 = db.collection("petTest").doc(petID);
+              docRef.get().then(function(doc) {
+                renderName(doc);
+              })
+              docRef2.get().then(function(docs) {
+                renderName(docs);
+              })
+            }
+        })
+    })
+}
