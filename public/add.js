@@ -3,7 +3,7 @@ const form = document.querySelector("#addpet-form");
 //saving data
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  db.collection('petTest').add({
+  db.collection('pets').add({
     name: form.petName.value,
     picture: form.petPic.value,
     breed: form.petBreed.value,
@@ -13,8 +13,8 @@ form.addEventListener('submit', (e) => {
     reward: form.petReward.value,
     email: form.ownerEmail.value,
     phone: form.ownerNumber.value,
-    lat: number = Number(form.mapLocation.value),
-    long: number = Number(form.mapLocation2.value)
+    lat: form.mapLocation.value,
+    long: form.mapLocation2.value
   })
   form.reset();
   alert("Pet successfully added.");
