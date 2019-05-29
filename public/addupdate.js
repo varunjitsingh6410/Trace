@@ -1,12 +1,13 @@
 const addUpdate = document.querySelector('#addupdate-form');
-
+let queryString3 = decodeURIComponent(window.location.search);
+queryString3 = queryString3.substring(7);
 addUpdate.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const date = addUpdate['date'].value;
   const description = addUpdate['desc'].value;
 
-  var pet = db.collection("petTest").doc("m5OOeiCT2wRBSWgZhvVg");
+  var pet = db.collection("petTest").doc(queryString3);
 
   return pet.update({
     alertdate:date,
@@ -20,7 +21,7 @@ addUpdate.addEventListener('submit', (e) => {
   })
   .then(function() {
       console.log("Document successfully updated!");
-      window.location.href = 'pet.html';
+      window.location.href = 'pet.html?para1='+queryString3;
   })
   .catch(function(error) {
       // The document probably doesn't exist.

@@ -26,8 +26,7 @@ if (doc.exists) {
 
   link.setAttribute('id', doc.id);
   link.setAttribute('class', 'set');
-  link.setAttribute('href', 'pet.html');
-  link.setAttribute('onclick', 'getID(this)');
+  link.setAttribute('href', "pet.html?para1="+ doc.id);
 
   name.textContent = doc.data().name.toUpperCase();
   petMap.set(doc.data().name, doc.id);

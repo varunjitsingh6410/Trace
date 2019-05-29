@@ -4,7 +4,6 @@ const petUpdate = document.querySelector('#updates');
 
 let queryString = decodeURIComponent(window.location.search);
 queryString = queryString.substring(7);
-console.log(queryString);
 
 // create element and render pet list
 function renderNamePet(doc) {

@@ -1,6 +1,8 @@
 const petData = document.querySelector('#pet');
 
 const petUpdate = document.querySelector('#updates');
+let queryString2 = decodeURIComponent(window.location.search);
+queryString2 = queryString2.substring(7);
 
 // create element and render pet list
 function renderNamePet(doc) {
@@ -116,21 +118,23 @@ function renderUpdate(doc) {
   petUpdate.appendChild(li);
 }
 //render pet
-let docRef = db.collection("pets").doc(imgID);
+let docRef = db.collection("pets").doc(queryString2);
 docRef.get().then(function(doc) {
   if (doc.exists) {
-  renderName(doc)
+  renderNamePet(doc)
+  rednerUpdate(doc)
   }
 });
 //render petTest
-let docRef2 = db.collection("pets").doc(imgID);
+let docRef2 = db.collection("petTest").doc(queryString2);
 docRef2.get().then(function(docs) {
   if (docs.exists) {
-  renderName(docs)
+  renderNamePet(docs)
+  renderUpdate(docs)
   }
 });
 
-/*// Initialize and add the map
+// Initialize and add the map
 function initMap(doc) {
  const lat = doc.data().lat;
  const lng = doc.data().long;
@@ -141,4 +145,7 @@ function initMap(doc) {
 		 document.getElementById('map'), {zoom: 13, center: position});
  // The marker, positioned at Uluru
  var marker = new google.maps.Marker({position: position, map: map});
-}*/
+}
+$('#updateButton').click(function(){
+  window.location = "addupdate.html?para1="+ queryString2;
+});
