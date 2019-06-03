@@ -195,4 +195,4 @@ node.js and express.
 https://docs.google.com/presentation/d/1wE9Se7SFTxBgmThDBZHwwmYO3oUhZeDmtHIxu8I4VKQ/edit#slide=id.g5af68617b6_6_0
 
 ## Google Slides Picture
-![](finalSlide.png)
+![](finalslideimage.png)
