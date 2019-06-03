@@ -62,12 +62,12 @@ if (doc.exists) {
   petData.appendChild(li);
 }
 }
-db.collection('pets').get().then((snapshot) => {
+db.collection('pets').onSnapshot((snapshot) => {
   snapshot.docs.forEach(doc => {
       let name = doc.data().name;
       let location = doc.data().location;
       let status = doc.data().status;
-      if (name && (status == "LOST")) {
+      if (name && (status=="LOST")) {
         renderName(doc);
       }
   })

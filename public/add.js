@@ -15,7 +15,9 @@ form.addEventListener('submit', (e) => {
     email: form.ownerEmail.value,
     phone: form.ownerNumber.value,
     lat: form.mapLocation.value,
-    long: form.mapLocation2.value
+    long: form.mapLocation2.value,
+    status: "LOST"
+
   });
 
 
