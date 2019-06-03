@@ -66,4 +66,4 @@ This page allows the user to change their email or password after verifying thei
 https://docs.google.com/presentation/d/1wE9Se7SFTxBgmThDBZHwwmYO3oUhZeDmtHIxu8I4VKQ/edit#slide=id.g5af68617b6_6_0
 
 ## Google Slides Picture
-![](finalSlide.PNG)
+![](finalSlide.png)
