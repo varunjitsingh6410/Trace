@@ -1,4 +1,7 @@
-// sign up
+/*
+* this file will create new user to the trace database using firebase authentification
+* from information inputed in the register page.  
+*/
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();

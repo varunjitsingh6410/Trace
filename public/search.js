@@ -1,3 +1,7 @@
+/*
+* this file will search through the database for a
+*/
+
 $('document').ready(function(){
   $('#searchbutton').click(() => {
     $('ul').empty();

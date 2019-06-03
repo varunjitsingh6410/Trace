@@ -1,4 +1,7 @@
-// edit info
+/*
+* this file will edit account information ( email and password) from the profile page.
+* All changes will be updated to the trace database. 
+*/
 const editForm = document.querySelector('#editinfo-form');
 editForm.addEventListener('submit', (e) => {
   e.preventDefault();

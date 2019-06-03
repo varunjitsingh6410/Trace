@@ -1,3 +1,8 @@
+/*
+* This file contains a function that will populate the pet page
+* when the user clicks on a pet from the map. It will take the doc id
+* sent with the url to find the pet.
+*/
 const petData = document.querySelector('#pet');
 
 const petUpdate = document.querySelector('#updates');

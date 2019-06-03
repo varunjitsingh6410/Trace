@@ -1,7 +1,8 @@
-/*//get data
-db.collection('pets').get().then(snapshot => {
-  console.log(snapshot.docs)
-});*/
+/*
+* this file will pull up the account information from the trace database and
+* will populate the information on the account page, including email, name, and
+* the pet that was added to the database through the account. 
+*/
 
 auth.onAuthStateChanged(user => {
   if (user) {
