@@ -3,23 +3,21 @@ Team Name: Ferrets
 Application Name: Trace
 
 Names:
-Thao Nguyen,
-Varun Jit Singh,
-Sasri Dedigama,
-Yumi Minami
-
-Yumi
+#### Yumi Minami
 Full Stack Developer
 Implemented the search and list page functionality using JavaScript. Used the dataset api and imported it into Firestore. Styled and created pages for app using HTML and CSS. Created Mid – Fi prototypes using Figma.
-Thao
+#### Thao Nguyen
 Full Stack Developer
 Worked on the add pet, pet info, account page and updates. Assisted in the integration of the Firestore database and its functionality in the app. Styled and created pages for app using HTML and CSS. Created graphics used in the app using Adobe Illustrator.
-Varun
+#### Varun Jit Singh
 Full Stack Developer
 Implemented the login, signup pages initially using Ajax at first and then converted to Firestore. Assisted in the implementation of the google maps api in the maps page. Made sure deliverables were done on time and done right.
-Sasri
+#### Sasri Dedigama
 Full Stack Developer
 Implemented the map page with firebase real time database and then converted to firebase fire store database. Integrated the google maps api into the map. Created marker icon using Photoshop.
+
+## Video Demo Link
+https://drive.google.com/open?id=1QmcfRJ0IcJ-4Sf8JghSYVEmlpCBRHhHl
 
 ## UI Skeleton Webpages
 
@@ -49,6 +47,8 @@ Implemented the map page with firebase real time database and then converted to 
 ![](12.PNG)
 
 ## File Descriptions
+
+#### Account Login
 index.html
 The index page is the login page for users. Users have the option to
 log into the app as well as forgot password and sign up options.
@@ -74,6 +74,7 @@ forgotpass.html
 The forgot password page allows users to recieve an email in order to
 be able to reset their password.
 
+#### Map page
 map.html
 This file implements the map feature using the google maps api. The map
 is marked with various pins representing pets. The pins can be clicked on
@@ -99,6 +100,7 @@ from the map.html, list.html, or notification.html pages respectively. The
 information on these pages is more in depth on each pet and allows updates to be
 made regarding the pet's status.
 
+#### List page
 list.html
 This file shows all the pets in a list format. The user can search for a
 specific pet using the search bar or click on a pet's image which would lead
@@ -119,10 +121,10 @@ search.js
 This file will search through the database when the enter key is pressed
 on the search bar of list page.
 
-
 pet.js
 This file will populate the list page with all the pets from the database in firestore and will also search through the list whenever the user enters any key in the search bar.
 
+#### Add pet page
 addLostPet.html
 This page lets the user add a missing pet to the database. Users can enter
 in relevant information such as the pet's name, location description, and their exact missing location on a map, description, and reward along with the owners contact information. The information then gets inputted into Firebase storage so
@@ -142,6 +144,7 @@ addupdate.js
 This file contains a function that will take in the update entered
 from the form on addupdate.html and add the alert to the pet's collection.
 
+#### Notification page
 notification.html
 This page shows the user notifications on various pets with their
 respective updates being shown in the preview. Clicking on a pet's image
@@ -150,6 +153,7 @@ leads to their pet.html page.
 petalert.js
 This file will find pets with new updates and show it on the notification page.
 
+#### Profile page
 profile.html
 This page showcases the profile page of the current user logged in.
 This page includes options ot adjust account settings as well as be able
