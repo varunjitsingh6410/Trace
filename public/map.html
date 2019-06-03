@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 <script>
@@ -113,13 +114,12 @@
 <body>
 
 
-
     <!--The div element for the map -->
     <div id="map"></div>
 
-<script src="send2.js"></script>
  <script>
          var map;
+				 	var markers = [];
 
     function initMap() {
 
@@ -132,9 +132,6 @@
           disableDoubleClickZoom: true,
         });
 
-
-
-
         db =firebase.firestore();
           // if (navigator.geolocation)
         db.collection("pets")
@@ -145,10 +142,6 @@
 
      const lat = doc.data().lat;
      const lng = doc.data().long;
-
-     console.log(doc.data().name);
-     console.log(doc.data().description);
-
 
      const position = new google.maps.LatLng(lat, lng);
 
@@ -181,9 +174,8 @@
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
+  }
 
-
-    }
     </script>
 
 
