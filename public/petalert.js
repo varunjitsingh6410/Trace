@@ -49,11 +49,11 @@ if (doc.exists) {
   }
 }
 
-db.collection('petTest').get().then((snapshot) => {
+/*db.collection('petTest').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       renderName(doc);
   })
-});
+});*/
 db.collection('pets').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       let name = doc.data().name;
@@ -78,13 +78,13 @@ function updateResult(query) {
               resultPet.set(algo, "");
               petID = petMap.get(algo);
               let docRef = db.collection("pets").doc(petID);
-              let docRef2 = db.collection("petTest").doc(petID);
+              //let docRef2 = db.collection("petTest").doc(petID);
               docRef.get().then(function(doc) {
                 renderName(doc);
               })
-              docRef2.get().then(function(docs) {
+              /*docRef2.get().then(function(docs) {
                 renderName(docs);
-              })
+              })*/
             }
           }
         })
