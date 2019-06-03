@@ -62,12 +62,6 @@ if (doc.exists) {
   petData.appendChild(li);
 }
 }
-
-db.collection('petTest').get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-      renderName(doc);
-  })
-});
 db.collection('pets').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
       let name = doc.data().name;
@@ -78,6 +72,7 @@ db.collection('pets').get().then((snapshot) => {
       }
   })
 });
+
 
 function updateResult(query) {
     let resultList = document.querySelector('#pet-list');
@@ -91,12 +86,8 @@ function updateResult(query) {
               resultPet.set(algo, "");
               petID = petMap.get(algo);
               let docRef = db.collection("pets").doc(petID);
-              let docRef2 = db.collection("petTest").doc(petID);
               docRef.get().then(function(doc) {
                 renderName(doc);
-              })
-              docRef2.get().then(function(docs) {
-                renderName(docs);
               })
             }
           }

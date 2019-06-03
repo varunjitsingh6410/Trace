@@ -62,22 +62,6 @@ $('document').ready(function(){
         petData.appendChild(li);
     }
   }
-    db.collection('petTest').get().then((snapshot) => {
-      snapshot.docs.forEach(doc => {
-        let name = doc.data().name;
-        let location = doc.data().location;
-        let status = doc.data().status;
-        let search = $('#searchBox').val();
-        name = name.toUpperCase();
-        search = search.toUpperCase();
-        if (name == search) {
-          renderName(doc);
-        }
-        else if (search== ""){
-          renderName(doc);
-        }
-      })
-    });
     db.collection('pets').get().then((snapshot) => {
       snapshot.docs.forEach(doc => {
         let name = doc.data().name;

@@ -127,15 +127,6 @@ docRef.get().then(function(doc) {
   initMap(doc)
   }
 });
-//render petTest
-let docRef2 = db.collection("petTest").doc(queryString);
-docRef2.get().then(function(docs) {
-  if (docs.exists) {
-  renderNamePet(docs)
-  renderUpdate(docs)
-  initMap(docs)
-  }
-});
 $('#updateButtonM').click(function(){
   window.location = "addupdateMap.html?para1="+ queryString;
 });
