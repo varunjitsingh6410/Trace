@@ -2,12 +2,16 @@
 <html>
 <head>
 	<title>Notification</title>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-a:link,a:visited{
+
+a:link,a:visited {
 		color: black;
 		text-decoration: none;
 }
@@ -21,6 +25,7 @@ p.notif{
 	margin: 0;
 	padding-top: 0;
 }
+
 label{
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
@@ -29,11 +34,82 @@ label{
 	display: inline-block;
 	padding: 10px;
 }
+
+
+	ul {
+		list-style-type: none;
+	  padding: 0;
+		margin: 0;
+		font-size:16px;
+	}
+
+	li {
+		padding-left:130px;
+    background: white;
+		font-family: 'Roboto', sans-serif;
+    font-size:12px;
+	  color: #555;
+	  font-weight:600;
+    position: relative;
+    height: 120px;
+	}
+
+	li span{
+    display: block;
+	}
+
+
+li img {
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width:130px;
+	margin:0;
+	height:100%;
+}
+
+
+	li span:nth-child(1){
+		background-color: #969696;
+	  color: #FFFF;
+	  text-align: center;
+	  padding: 3px;
+	  font-family: 'Open Sans', sans-serif;
+	  margin: 0;
+	  font-size:12px;
+	  font-weight:580;
+	  letter-spacing:1px;
+	}
+
+	li span:nth-child(2){
+		position: absolute;
+		top:30px;
+		left:140px;
+		font-family: 'Roboto', sans-serif;
+	  font-size: 12px;
+	  font-weight:600;
+	  letter-spacing:1px;
+	  color: #F3BD54;
+	}
+
+	li span:nth-child(3){
+		position:absolute;
+		top:50px;
+		left: 140px;
+		font-size:14px;
+	}
+
+
+
 </style>
 <body>
 	<div class="header">
 	<h1>ALERTS</h1>
 	</div>
+
+<ul id = "pet-alerts"></ul>
+<br><br><br>
+	<!--
 <a href="map.html">
 <div class= column>
 	<label class="date"> 4/29/19 12:59PM</label>
@@ -56,7 +132,7 @@ label{
 	<p class="notif" href="map.html">Kuma last seen at 100 Gilman Drive</P>
 	<hr>
 </div>
-</a>
+</a>-->
 	<div class="footer">
 		<a href="map.html"><img src="images/location.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
     <a href="list.html"><img src="images/list.png" style="text-decoration:none;height:28px;padding-top:12px;padding-bottom:12px;padding-left:18px;padding-right:18px;"></a>
@@ -64,5 +140,27 @@ label{
 		<a href="notification.html"><img src="images/bellcolor.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 		<a href="profile.html"><img src="images/profile.png" style="text-decoration:none;height:35px;padding-top:10px;padding-bottom:10px;padding-left:18px;padding-right:18px;"></a>
 	</div>
+
+
+	<!-- Firebase -->
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyAtMlkkbp0XNEIzmC-qbRKpQM6U2lzzfLs",
+			authDomain: "trace-43d6f.firebaseapp.com",
+			databaseURL: "https://trace-43d6f.firebaseio.com",
+			projectId: "trace-43d6f",
+			storageBucket: "trace-43d6f.appspot.com",
+			messagingSenderId: "241015211966",
+			appId: "1:241015211966:web:d19af455bd83d38c"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		const db = firebase.firestore(); //database
+		db.settings({ timestampsInSnapshots: true });
+
+	</script>
+	<script src="petalert.js"></script>
+
 </body>
 </html>
