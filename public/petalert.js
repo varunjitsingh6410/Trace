@@ -1,3 +1,7 @@
+/*
+* this file will find pets with new updates and show it on
+* the notification page.
+*/
 
 const petData = document.querySelector('#pet-alerts');
 let arr = [];

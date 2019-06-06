@@ -1,4 +1,8 @@
-
+/*
+* This file will populate the list page with all the pets from the database in firestore
+* and will also search through the list whenever the user enters any key in the
+* search bar.
+*/
 const petData = document.querySelector('#pet-list');
 let arr = [];
 let petMap = new Map();

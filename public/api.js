@@ -1,3 +1,9 @@
+/*
+* This file contains the pet information in the form of JSON file from the
+* API: https://data.kingcounty.gov/Licenses-Permits-and-Records/Lost-found-adoptable-pets/yaai-7frk?fbclid=IwAR0OGbnND4YFaO712OJT-7G5AdMzjZbIUXuZIXsCxKRYozRmJiy0hNtyHvg
+* The file then contains a function that takes all of the data and push it
+* up to the firebase firestore under the collection name 'pets'
+*/
 const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");

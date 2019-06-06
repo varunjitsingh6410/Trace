@@ -1,3 +1,9 @@
+/*
+* This file contains function that will take the information entered in the
+* form in add page and add the pet to the firestore database in the pets collection.
+* It will also add the pet under the user.
+*/
+
 const form = document.querySelector("#addpet-form");
 
 //saving data

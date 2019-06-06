@@ -1,3 +1,7 @@
+/*
+* This file contains a function that will set up a local server using
+* node.js and express. 
+*/
 const express = require('express');
 const app = express();
 
@@ -11,7 +15,7 @@ const usersDb = {
 };
 
 // This function returns the user names. Will later be
-// refactored into a function for forgotten passwords. 
+// refactored into a function for forgotten passwords.
 app.get('/users', (req, res) => {
   console.log('get users function');
   const userNames = Object.keys(usersDb);
@@ -19,12 +23,12 @@ app.get('/users', (req, res) => {
   res.send('hope you are having a good day!');
 });
 
-// This function is going to be used for logging in. 
+// This function is going to be used for logging in.
 app.get('/users/:userid', (req, res) => {
   const nameToFind = req.params.userid;
   const userInfo = usersDb[nameToFind];
   console.log(nameToFind, '->', userInfo);
-  
+
   if (userInfo){
     res.send(userInfo);
   } else {
@@ -35,45 +39,3 @@ app.get('/users/:userid', (req, res) => {
 app.listen (3000, () => {
   console.log("Server started");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

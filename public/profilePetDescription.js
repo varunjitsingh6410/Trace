@@ -1,3 +1,8 @@
+/*
+* this file navigate the pet on the profile page to go to that pet's INFORMATION
+* page. 
+*/
+
 const petData = document.querySelector('#pet');
 
 const petUpdate = document.querySelector('#updates');

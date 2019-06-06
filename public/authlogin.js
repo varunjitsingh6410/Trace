@@ -1,4 +1,7 @@
-//login
+/*
+* this file will go to the trace database using firebase authentification
+* and will log in the user when the email and password is correct. 
+*/
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();

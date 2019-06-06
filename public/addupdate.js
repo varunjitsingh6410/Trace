@@ -1,3 +1,8 @@
+/*
+* This file contains a function that will take in the update entered
+* from the form on addupdate.html and add the alert to the pet's collection.
+* 
+*/
 const addUpdate = document.querySelector('#addupdate-form');
 let queryString3 = decodeURIComponent(window.location.search);
 queryString3 = queryString3.substring(7);

@@ -1,3 +1,8 @@
+/*
+* this file will search through the database when the enter key is pressed
+* on the search bar of list page. 
+*/
+
 $('document').ready(function(){
   $('#searchbutton').click(() => {
     $('ul').empty();
